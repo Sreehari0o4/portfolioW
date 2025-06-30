@@ -115,3 +115,95 @@ a, a:visited {
     color: #6D7B8C;
     text-decoration: none;
 }
+
+.scroll-rolls {
+    font-family: "Plus Jakarta Sans", system-ui, Helvetica, Arial, sans-serif;
+    color-scheme: light dark;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    scrollbar-color: rgba(var(--text-rgb),.7) transparent;
+    --transition-theme: .4s;
+    --transition-mouse: .2s;
+    --transition-length: .5s;
+    --transition-long: .8s;
+    --default-lava-filter: opacity(100%) saturate(1);
+    --shadow-small: 0 0 10px rgba(0, 0, 0, .2);
+    --shadow-large: 0 0 40px rgba(0, 0, 0, .2);
+    --bg: #fffbee;
+    --bg-rgb: 255, 251, 238;
+    --text: #191919;
+    --text-rgb: 25, 25, 25;
+    --color: #ff6663;
+    --color-rgb: 255, 102, 99;
+    --glass-text: rgba(25, 25, 25, .2);
+    font-synthesis: none;
+    --apple-lava-filter: saturate(200%) contrast(50%) brightness(1.15);
+    --scroll-text-x: -452px;
+    --lava-filter-transition: filter 600ms;
+    --lava-droplet-filter: var(--default-lava-filter);
+    --group-2-filter: var(--default-lava-filter);
+    --group-1-filter: var(--default-lava-filter);
+    position: absolute;
+    bottom: 5%;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    animation: blur-in var(--transition-length) 1.5s forwards;
+    filter: blur(0px);
+    opacity: 1;
+}
+
+/* Place scroll-roles at the bottom and make it full width */
+.scroll-roles {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    background: #fff;
+    z-index: 100;
+    overflow: hidden;
+    height: 48px;
+    border-top: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.scroll-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-left 30s linear infinite;
+}
+
+.scroll-text {
+    display: flex;
+    align-items: center;
+}
+
+.text-small {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    margin-right: 12px;
+}
+
+.bullet {
+    width: 8px;
+    height: 8px;
+    background: #333;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 12px;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
