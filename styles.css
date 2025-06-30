@@ -179,11 +179,11 @@ a, a:visited {
     right: 0;
     bottom: 0;
     width: 100vw;
-    background: #fff;
+    background: transparent; /* changed from #fff to transparent */
     z-index: 100;
     overflow: hidden;
     height: 48px;
-    border-top: 1px solid #eee;
+    /*border-top: 1px solid #eee;*/
     display: flex;
     align-items: center;
 }
@@ -201,7 +201,7 @@ a, a:visited {
 
 .text-small {
     font-family: 'Helvetica', sans-serif;
-    font-size: 14px;
+    font-size: 17px;
     color: #333;
     white-space: nowrap;
     margin-right: 12px;
