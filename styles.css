@@ -259,3 +259,53 @@ a, a:visited {
 body, * {
     cursor: none !important;
 }
+
+.top-bar {
+    width: 100vw;
+    height: 64px;
+    background: #fff; /* or any color you want */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    /* box-shadow: 0 2px 8px rgba(0,0,0,0.04);optional subtle shadow */
+}
+
+.left-bar, .right-bar {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e87b7b; /* or your preferred color */
+    overflow: hidden;    /* ensures image doesn't overflow */
+    border-radius: 12px; /* optional: rounded corners */
+}
+
+.left-bar {
+    margin-left: 16px; /* space from the left edge */
+}
+
+.right-bar {
+    margin-right: 16px; /* space from the right edge */
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+    animation: rotate-logo 8s linear infinite;
+}
+
+@keyframes rotate-logo {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
