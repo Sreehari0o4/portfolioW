@@ -1,6 +1,6 @@
 const magicMouse = document.getElementById('magic-mouse');
 
-const clickableSelectors = 'a, button, .works, .contact';
+const clickableSelectors = 'a, .works, .contact, button:not(.logo-btn)';
 
 let covering = false;
 

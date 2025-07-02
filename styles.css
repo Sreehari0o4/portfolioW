@@ -133,6 +133,12 @@ a, a:visited {
     text-decoration: none;
 }
 
+.works a:hover,
+.contact a:hover {
+    color: #FF6060;
+    transition: color 0.2s;
+}
+
 .scroll-rolls {
     font-family: "Plus Jakarta Sans", system-ui, Helvetica, Arial, sans-serif;
     color-scheme: light dark;
@@ -191,7 +197,7 @@ a, a:visited {
 .scroll-track {
     display: flex;
     width: max-content;
-    animation: scroll-left 60s linear infinite;
+    animation: scroll-left 80s linear infinite;
 }
 
 .scroll-text {
@@ -280,7 +286,7 @@ body, * {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #e87b7b; /* or your preferred color */
+    /* background: #e87b7b; or your preferred color */
     overflow: hidden;    /* ensures image doesn't overflow */
     border-radius: 12px; /* optional: rounded corners */
 }
@@ -293,12 +299,41 @@ body, * {
     margin-right: 16px; /* space from the right edge */
 }
 
+.logo-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 12px; /* center vertically in the top bar */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;   /* match logo size */
+    height: 48px;
+}
+
+.rotating-logo {
+    animation: rotate-logo 8s linear infinite;
+    transition: transform 0.4s; /* Add this line */
+}
+
 .logo {
     width: 48px;
     height: 48px;
     object-fit: contain;
     display: block;
-    animation: rotate-logo 8s linear infinite;
+    transition: transform 0.3s; /* <-- Move transition here */
+}
+
+
+.right-bar .logo-btn:hover .logo {
+    transform: rotate(90deg);
+}
+
+.left-bar .logo-btn:hover .rotating-logo {
+    animation-play-state: paused;    /* Stop rotation */
+    
 }
 
 @keyframes rotate-logo {
