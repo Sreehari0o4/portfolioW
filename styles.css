@@ -333,8 +333,10 @@ body, * {
 
 .left-bar .logo-btn:hover .rotating-logo {
     animation-play-state: paused;    /* Stop rotation */
-    
+    background: #ff6060; /* Optional: add a background on hover */
+    border-radius: 50px; /* Optional: rounded corners on hover */
 }
+
 
 @keyframes rotate-logo {
     0% {
