@@ -75,3 +75,46 @@ document.querySelectorAll('a, .works, .contact, .main-text, .sub-text, .text-sma
         magicMouse.classList.remove('magic-mouse--active');
     });
 });
+
+const leftBtn = document.querySelector('.left-bar .logo-btn');
+const leftLogo = leftBtn.querySelector('.rotating-logo');
+let rotateToZeroInterval = null;
+
+leftBtn.addEventListener('mouseenter', function() {
+    // Get current rotation
+    const st = window.getComputedStyle(leftLogo, null);
+    const tr = st.getPropertyValue("transform");
+    let angle = 0;
+    if (tr !== "none") {
+        const values = tr.split('(')[1].split(')')[0].split(',');
+        const a = values[0];
+        const b = values[1];
+        angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+        if (angle < 0) angle += 360;
+    }
+    // Stop infinite animation
+    leftLogo.style.animation = 'none';
+    leftLogo.style.transition = 'none';
+    leftLogo.style.transform = `rotate(${angle}deg)`;
+
+    // Start fast continuous rotation (clockwise) and stop at 0deg
+    let current = angle;
+    clearInterval(rotateToZeroInterval);
+    rotateToZeroInterval = setInterval(() => {
+        current += 24; // fast rotation
+        if (current >= 360) current -= 360;
+        leftLogo.style.transform = `rotate(${current}deg)`;
+        // If close to 0deg, snap to 0 and stop
+        if (current < 24 || Math.abs(current - 360) < 24) {
+            leftLogo.style.transform = `rotate(0deg)`;
+            clearInterval(rotateToZeroInterval);
+        }
+    }, 16); // ~60fps
+});
+
+leftBtn.addEventListener('mouseleave', function() {
+    clearInterval(rotateToZeroInterval);
+    leftLogo.style.transition = '';
+    leftLogo.style.transform = '';
+    leftLogo.style.animation = 'rotate-logo 8s linear infinite';
+});
