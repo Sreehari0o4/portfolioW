@@ -329,6 +329,7 @@ body, * {
 
 .right-bar .logo-btn:hover .logo {
     transform: rotate(90deg);
+    background: #ffffff;
 }
 
 .left-bar .logo-btn:hover .rotating-logo {
@@ -350,4 +351,10 @@ body, * {
 .right-bar .logo {
     width: 34px;
     height: 34px;
+}
+
+.right-bar .logo[src*="xr"] {
+    width: 43px;
+    height: 43px;
+    transition: width 0.2s, height 0.2s;
 }

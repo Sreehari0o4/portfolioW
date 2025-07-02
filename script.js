@@ -1,6 +1,6 @@
 const magicMouse = document.getElementById('magic-mouse');
 
-const clickableSelectors = 'a, .works, .contact, button:not(.logo-btn)';
+const clickableSelectors = 'a, .works, .contact, button:not(.logo-btn), .rotating-logo, .lbtn';
 
 document.addEventListener('mousemove', (e) => {
     magicMouse.style.left = e.clientX + 'px';
@@ -117,4 +117,16 @@ leftBtn.addEventListener('mouseleave', function() {
     leftLogo.style.transition = '';
     leftLogo.style.transform = '';
     leftLogo.style.animation = 'rotate-logo 8s linear infinite';
+});
+
+const rightBtn = document.querySelector('.right-bar .logo-btn');
+const rightLogo = rightBtn.querySelector('.logo');
+const originalRightSrc = rightLogo.src;
+
+rightBtn.addEventListener('mouseenter', () => {
+    rightLogo.src = 'images/xr.png'; // Make sure this path is correct
+});
+
+rightBtn.addEventListener('mouseleave', () => {
+    rightLogo.src = originalRightSrc;
 });
