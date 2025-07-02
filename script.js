@@ -2,8 +2,6 @@ const magicMouse = document.getElementById('magic-mouse');
 
 const clickableSelectors = 'a, .works, .contact, button:not(.logo-btn)';
 
-let covering = false;
-
 document.addEventListener('mousemove', (e) => {
     magicMouse.style.left = e.clientX + 'px';
     magicMouse.style.top = e.clientY + 'px';
@@ -26,45 +24,46 @@ document.addEventListener('mousemove', (e) => {
         if (hex.indexOf('#') === 0) {
             hex = hex.slice(1);
         }
-        // convert 3-digit hex to 6-digits.
         if (hex.length === 3) {
             hex = hex.split('').map(x => x + x).join('');
         }
         if (hex.length !== 6) {
             return '#000000';
         }
-        // invert color components
         let r = (255 - parseInt(hex.slice(0, 2), 16)).toString(16),
             g = (255 - parseInt(hex.slice(2, 4), 16)).toString(16),
             b = (255 - parseInt(hex.slice(4, 6), 16)).toString(16);
-        // pad each with zeros and return
         return "#" + [r, g, b].map(x => x.length === 1 ? "0" + x : x).join('');
     }
 
+    // Default mouse style
+    let borderColor = "#000";
+    let background = "transparent";
+
     if (color) {
         const hexColor = rgbToHex(color);
-        const inverted = invertColor(hexColor);
-
-        magicMouse.style.borderColor = inverted;
-        magicMouse.style.background = "transparent";
+        borderColor = invertColor(hexColor);
     }
 
-    // Check if hovering over a clickable element
+    // If hovering over a clickable, fill the mouse with its color (no covering)
     if (elem && elem.matches(clickableSelectors)) {
-        const rect = elem.getBoundingClientRect();
-        magicMouse.style.width = rect.width + 'px';
-        magicMouse.style.height = rect.height + 'px';
-        magicMouse.style.left = rect.left + rect.width / 2 + 'px';
-        magicMouse.style.top = rect.top + rect.height / 2 + 'px';
-        magicMouse.classList.add('covering');
-        covering = true;
-    } else if (covering) {
-        // Restore to default size
+        let fill = window.getComputedStyle(elem).backgroundColor;
+        if (fill === 'rgba(0, 0, 0, 0)' || fill === 'transparent') {
+            fill = window.getComputedStyle(elem).color;
+        }
+        background = fill;
+        borderColor = fill;
         magicMouse.style.width = '32px';
         magicMouse.style.height = '32px';
         magicMouse.classList.remove('covering');
-        covering = false;
+    } else {
+        magicMouse.style.width = '32px';
+        magicMouse.style.height = '32px';
+        magicMouse.classList.remove('covering');
     }
+
+    magicMouse.style.borderColor = borderColor;
+    magicMouse.style.background = background;
 });
 
 // Add effect on links and dark backgrounds
