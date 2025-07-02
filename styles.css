@@ -344,3 +344,8 @@ body, * {
         transform: rotate(360deg);
     }
 }
+
+.right-bar .logo {
+    width: 34px;
+    height: 34px;
+}
