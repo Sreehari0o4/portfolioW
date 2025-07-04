@@ -1,0 +1,27 @@
+body {
+    background: #212121;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.me-bg-img {
+    position: fixed;
+    left: 25%;
+    top: 10%;
+    bottom: 0;
+    transform: translateX(-50%) rotate(2.195deg);
+    width: 900px;
+    height: 900px;
+    aspect-ratio: 599/524;
+    background-image: url('../images/me.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.24;
+    z-index: 0;
+    pointer-events: none;
+}
+
