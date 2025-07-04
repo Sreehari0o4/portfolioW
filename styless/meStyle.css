@@ -228,7 +228,7 @@ body {
     height: 40px;
     flex-shrink: 0;
     border-radius: 29px;
-    background: #FF8554;
+    background: #ff8d8d;
     color: #000000;
     font-family: Coolvetica, Arial, sans-serif;
     letter-spacing: 1.2px;
@@ -245,7 +245,7 @@ body {
 }
 
 .resume-btn:hover {
-    background: #fa6022;
+    background: #ff6060;
 }
 
 /*paragraphs */
@@ -271,7 +271,7 @@ p{
     justify-content: left;
     height: 24px;
     color: #e3e3e3;
-    font-family: Inter, Arial, sans-serif;
+    font-family: Coolvetica, Arial, sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 300;
@@ -287,7 +287,7 @@ p{
 }
 
 .linkz-btn:hover {
-    color: #FF8554;
+    color: #ff7373;
     text-decoration: underline;
 }
 
@@ -323,7 +323,7 @@ p{
 }
 
 .about-me-link {
-  color: #FF8554;
+  color: #ff7b7b;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-style: italic;
