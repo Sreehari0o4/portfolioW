@@ -271,7 +271,7 @@ body, * {
     height: 64px;
     background: #fff; /* or any color you want */
     display: flex;
-    align-items: center;
+    align-items: right;
     justify-content: space-between;
     position: fixed;
     top: 0;

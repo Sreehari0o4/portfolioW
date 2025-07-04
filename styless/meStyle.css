@@ -25,10 +25,52 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
-    margin-top: -30px;
+    
     
 }
 
+.top-bar {
+    width: 100%;
+    height: 52px;
+    /* background: #FFF;  */
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    margin-right: 10px;
+    /* box-shadow: 0 2px 8px rgba(0,0,0,0.04);optional subtle shadow */
+}
+
+/*back button */
+
+.back-btn{
+    background: transparent;
+    border: none;
+    margin-right: 14px;
+    padding: 0;
+    margin-top: 3px; /* center vertically in the top bar */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;   /* match logo size */
+    height: 48px;
+}
+
+.back-btn .logo {
+    transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+
+.back-btn:hover .logo,
+.back-btn:focus .logo {
+    transform: scale(1.2); /* Increase the scale as needed */
+}
+
+/*bg image */
 .me-bg-img {
     position: fixed;
     left: 25%;
@@ -42,11 +84,12 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.24;
+    opacity: 25%;
     z-index: 0;
     pointer-events: none;
 }
 
+/*flex box*/
 .about-me-flex-row {
     display: flex;
     flex-direction: row;
@@ -59,9 +102,9 @@ body {
     z-index: 1;
     flex-wrap: nowrap;
     width: auto;
-    /* max-width: 1200px; */
 }
 
+/*about me title*/
 .about-me-title {
     display: flex;
     width: 90vw;
@@ -87,6 +130,7 @@ body {
     z-index: 1;
 }
 
+/*contents*/
 .about-me-content {
     display: flex;
     width: 100%;
@@ -109,6 +153,7 @@ body {
     
 }
 
+/*my name*/
 .about-me-name {
     color: #FF6060;
     font-family: Montserrat, Arial, sans-serif;
@@ -121,6 +166,7 @@ body {
     /* display: block; */
 }
 
+/* selected wprds*/
 .about-me-keyword {
     color: #FFF;
     font-family: Montserrat-italic, Arial, sans-serif;
@@ -131,11 +177,12 @@ body {
     letter-spacing: 1.2px;
 }
 
+/*my image*/
 .about-me-image-box {
     width: 100%;
     max-width: 418px;
     min-width: 200px;
-    height: 507px;
+    height: 400px;
     margin-left: 0;
     margin-top: 32px;
     border-radius: 73px;
@@ -144,8 +191,35 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 0;
+    margin-top: 32px;
 }
 
+@media (min-width: 1100px) {
+    .about-me-flex-row {
+        flex-wrap: nowrap;
+    }
+    .about-me-image-box {
+        margin-left: 48px;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    
+    .about-me-flex-row {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        margin: 120px 16px 0 16px;
+    }
+    .about-me-image-box {
+        margin: 32px auto 0 auto;
+        /* height: 300px;
+        max-width: 90vw; */
+    }
+}
+
+/*resume button*/
 .resume-btn {
     display: flex;
     align-items: center;
@@ -170,40 +244,18 @@ body {
     margin-bottom: 36px;
 }
 
+.resume-btn:hover {
+    background: #fa6022;
+}
+
+/*paragraphs */
 p{
     
     margin: 0 0 .8em 0;
     padding: 0;
 }
 
-.resume-btn:hover {
-    background: #9d9d9d;
-}
-
-@media (min-width: 1100px) {
-    .about-me-flex-row {
-        flex-wrap: nowrap;
-    }
-    .about-me-image-box {
-        margin-left: 48px;
-        margin-top: 0;
-    }
-}
-@media (max-width: 900px) {
-    
-    .about-me-flex-row {
-        flex-direction: column-reverse;
-        align-items: stretch;
-        margin: 120px 16px 0 16px;
-    }
-    .about-me-image-box {
-        margin: 32px auto 0 auto;
-        height: 300px;
-        max-width: 90vw;
-    }
-}
-
-
+/*links*/
 .linkz {
     display: flex;
     width: 321px;
@@ -218,7 +270,7 @@ p{
     align-items: center;
     justify-content: left;
     height: 24px;
-    color: #FFF;
+    color: #e3e3e3;
     font-family: Inter, Arial, sans-serif;
     font-size: 20px;
     font-style: normal;
@@ -235,7 +287,7 @@ p{
 }
 
 .linkz-btn:hover {
-    color: #ff6060;
+    color: #FF8554;
 }
 
 .mail-link {
