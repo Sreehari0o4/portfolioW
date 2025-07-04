@@ -126,25 +126,26 @@ body {
     position: relative;
     left: 0;
     top: 50px;
-    margin-left: 3.6%;
+    margin-left: 6.7%;
     z-index: 1;
+    text-align:left;
 }
 
 /*contents*/
 .about-me-content {
     display: flex;
     width: 100%;
-    max-width: 780px;
+    max-width: 720px;
     min-width: 260px;
     height: auto;
     box-sizing: border-box;
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
-    color: #FFF;
+    color: #d4d4d4;
     text-align: justify;
     font-family: Montserrat, Arial, sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 200;
     line-height: normal;
@@ -157,7 +158,7 @@ body {
 .about-me-name {
     color: #FF6060;
     font-family: Montserrat, Arial, sans-serif;
-    font-size: 26px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -170,7 +171,7 @@ body {
 .about-me-keyword {
     color: #FFF;
     font-family: Montserrat-italic, Arial, sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     /* font-style: italic; */
     font-weight: 600;
     line-height: normal;
@@ -181,7 +182,7 @@ body {
 .about-me-image-box {
     width: 100%;
     max-width: 418px;
-    min-width: 200px;
+    min-width: 380px;
     height: 400px;
     margin-left: 0;
     margin-top: 32px;
@@ -301,4 +302,41 @@ p{
 .insta-link {
     width: 102px;
 }
+
+/*know more */
+.about-me-image-col {
+    display: flex;
+    flex-direction: column;
+    align-items: right; /* centers the text under the image */
+}
+.about-me-more-text {
+    
+    margin-top: 10px;
+    margin-right: 8px;
+    font-size: 14px;
+    color: #d2d2d2;
+    text-align: right;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1;    
+}
+
+.about-me-link {
+  color: #FF8554;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 1.05px;
+  text-decoration: none; /* Optional: removes underline */
+}
+
+.about-me-link:hover,
+.about-me-link:active {
+  text-decoration: underline;
+}
+
+
 
