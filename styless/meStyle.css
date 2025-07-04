@@ -26,7 +26,6 @@ body {
     padding: 0;
     position: relative;
     
-    
 }
 
 .top-bar {
@@ -108,8 +107,8 @@ body {
 .about-me-title {
     display: flex;
     width: 90vw;
-    max-width: 487px;
-    min-width: 520px;
+    /* max-width: 487px; */
+    min-width: 480px;
     height: 133px;
     flex-direction: column;
     justify-content: center;
@@ -289,6 +288,7 @@ p{
 
 .linkz-btn:hover {
     color: #FF8554;
+    text-decoration: underline;
 }
 
 .mail-link {
@@ -338,5 +338,38 @@ p{
   text-decoration: underline;
 }
 
+/*mouse*/
 
+#magic-mouse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid black;
+    background: transparent;
+    pointer-events: none;
+    z-index: 9999;
 
+    mix-blend-mode: difference; /* This inverts the color */
+    transition: background 0.2s, border-color 0.2s, transform 0.1s;
+    transform: translate(-50%, -50%);
+}
+
+#magic-mouse.magic-mouse--active {
+    background: currentColor;
+    border-color: white;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+#magic-mouse.covering {
+    transition: width 0.2s, height 0.2s, background 0.2s, border-color 0.2s, transform 0.1s;
+    border-radius: 12px; /* less round for button shape, adjust as needed */
+    background: rgba(0,0,0,0.07); /* subtle overlay effect */
+    border-color: #222;
+}
+
+body, * {
+    cursor: none !important;
+}
