@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Montserrat';
-    src: url('fonts/mont.ttf') format('truetype');
+    font-family: 'Montserrat-italic';
+    src: url('../fonts/mont-italics.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -39,7 +39,7 @@ a, a:visited {
     flex-shrink: 0;
     color: #838383;
     text-align: center;
-    font-family: Montserrat;
+    font-family: Montserrat-italic;
     font-size: 24px;
     font-style: italic;
     font-weight: 400;
