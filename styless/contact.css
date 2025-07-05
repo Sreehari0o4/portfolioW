@@ -59,10 +59,12 @@ body {
   max-height: 32px;
   display: block;
   transition: transform 0.3s ease;
+
 }
 
 .topbar-btn:hover .topbar-btn-img {
   transform: rotate(-90deg);
+
 }
 
 /* Background Image */
@@ -211,6 +213,8 @@ body {
   text-transform: inherit;
   text-decoration: none;
   cursor: pointer;
+  background:#e6e6e6;
+
 }
 
 .contact-item.col2 a:hover,
@@ -227,6 +231,7 @@ body {
 .phone-number {
   cursor: pointer;
   transition: color 0.2s ease;
+  background:#e6e6e6;
 }
 
 .phone-number:hover {
@@ -284,7 +289,6 @@ body {
   padding-bottom: 5.9px;
 }
 
-/*magic mouse*/
 /* Magic Mouse Cursor */
 #magic-mouse {
     position: fixed;
@@ -319,3 +323,4 @@ body {
 body, * {
     cursor: none !important;
 }
+
