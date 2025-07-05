@@ -140,6 +140,7 @@ body {
   width: 100%;
   height: 100%;
   gap: 0;
+  row-gap: 0;
 }
 
 .contact-item {
@@ -148,9 +149,29 @@ body {
   padding-left: 20px; /* Adjust as needed */
 }
 
+/* Custom spacing for each row */
+.contact-item:nth-child(1),
+.contact-item:nth-child(2),
+.contact-item:nth-child(3) {
+  margin-bottom: -10px; /* Small space after row 1 */
+}
+
+.contact-item:nth-child(4),
+.contact-item:nth-child(5),
+.contact-item:nth-child(6) {
+    margin-top: 0px; /* Larger space before row 2 */
+    margin-bottom: 20px; /* Larger space after row 2 */
+}
+
+.contact-item:nth-child(7),
+.contact-item:nth-child(8),
+.contact-item:nth-child(9) {
+  margin-bottom: 15px; /* Medium space after row 3 */
+}
+
 /* Column 1 styling */
 .contact-item.col1 {
-  color: #4D4D4D;
+  color: #6D7B8C;
   font-family: Coolvetica;
   font-size: 32px;
   font-style: normal;
@@ -254,4 +275,15 @@ body {
 .contact-item.col3 a:not(.social-links a):hover {
   text-decoration: underline;
   color: #FF6060; /* Add underline on hover */
+}
+
+/*ph number*/
+.phone-number {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.phone-number:hover {
+    color: #FF6060; /* Change color on hover */
+    text-decoration: underline;
 }
