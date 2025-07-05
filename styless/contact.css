@@ -1,0 +1,38 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #E6E6E6;
+  overflow: hidden; /* Prevents scrolling */
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Ensures vertical centering */
+  width: 100vw;  /* Ensures horizontal centering */
+}
+
+.contact-page {
+  position: relative;
+  width: 1440px;
+  height: 1024px;
+  background: #E6E6E6;
+  overflow: hidden;
+  
+}
+
+.contact-bg-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1000px;
+  height: 888px;
+  left: 200px;
+  top: 70px;
+  object-fit: cover;
+  z-index: 1;
+  background-color: transparent; /* Ensures no background color */
+}
