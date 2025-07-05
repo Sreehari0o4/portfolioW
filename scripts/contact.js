@@ -83,10 +83,10 @@ document.addEventListener('DOMContentLoaded', function() {
     initFooterHover(); // Add this line
 });
 
-//magic mouse
-// Updated JS snippet to set cursor fill with transparent negative color
+//magic mouse for contact page
 const magicMouse = document.getElementById('magic-mouse');
-const clickableSelectors = 'a, button:not(.logo-btn), .contact-grid, .phone-number, .footer a, .topbar-btn';
+
+const clickableSelectors = 'a, button:not(.logo-btn), .contact-grid.contact-item, .phone-number, .footer a, .topbar-btn,body';
 
 document.addEventListener('mousemove', (e) => {
     magicMouse.style.left = e.clientX + 'px';
@@ -131,26 +131,29 @@ document.addEventListener('mousemove', (e) => {
         borderColor = invertColor(hexColor);
     }
 
-    // If hovering over a clickable, fill the mouse with transparent negative color
+    // If hovering over a clickable, fill the mouse with its color (no covering)
     if (elem && elem.matches(clickableSelectors)) {
-        background = 'rgba(0, 0, 0, 0.2)'; // semi-transparent fill
-        borderColor = 'rgba(255, 255, 255, 0.7)';
-        magicMouse.style.width = '40px';
-        magicMouse.style.height = '40px';
-        magicMouse.classList.add('magic-mouse--filled');
+        let fill = window.getComputedStyle(elem).backgroundColor;
+        if (fill === 'rgba(0, 0, 0, 0)' || fill === 'transparent') {
+            fill = window.getComputedStyle(elem).color;
+        }
+        background = fill;
+        borderColor = fill;
+        magicMouse.style.width = '32px';
+        magicMouse.style.height = '32px';
+        magicMouse.classList.remove('covering');
     } else {
         magicMouse.style.width = '32px';
         magicMouse.style.height = '32px';
-        magicMouse.classList.remove('magic-mouse--filled');
+        magicMouse.classList.remove('covering');
     }
 
     magicMouse.style.borderColor = borderColor;
     magicMouse.style.background = background;
 });
 
-// Add effect on hover for clickable elements
-const hoverElements = document.querySelectorAll('a, .works, .contact, .main-text, .sub-text, .text-small, .phone-number, button, .footer a, .topbar-btn');
-hoverElements.forEach(el => {
+// Add effect on links and contact elements
+document.querySelectorAll('a, .phone-number, .topbar-btn, .footer a, .main-heading, .contact-item').forEach(el => {
     el.addEventListener('mouseenter', () => {
         magicMouse.classList.add('magic-mouse--active');
     });
@@ -158,5 +161,7 @@ hoverElements.forEach(el => {
         magicMouse.classList.remove('magic-mouse--active');
     });
 });
+
+
 
 
