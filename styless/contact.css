@@ -281,7 +281,56 @@ body {
   width: 80px; /* Custom size for hover image (me.png) */
   max-height: 80px;
   opacity: 1;
-  padding-bottom: 5px;
+  padding-bottom: 5.9px;
 }
 
+/*magic mouse*/
+#magic-mouse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid black;
+    background: rgba(0, 0, 0, 0.2); /* semi-transparent fill */
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference; /* allows content underneath to be visible with inverted colors */
+    transition: background 0.2s, border-color 0.2s, transform 0.1s, width 0.2s, height 0.2s;
+    transform: translate(-50%, -50%);
+}
+
+#magic-mouse.magic-mouse--active {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+#magic-mouse.magic-mouse--filled {
+    background: rgba(0, 0, 0, 0.2); /* semi-transparent fill on hover */
+    border-color: rgba(255, 255, 255, 0.7);
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+#magic-mouse.covering {
+    transition: width 0.2s, height 0.2s, background 0.2s, border-color 0.2s, transform 0.1s;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.07);
+    border-color: #222;
+}
+
+/* Remove any hover effect on topbar button and footer logo themselves */
+.topbar-btn:hover, .footer a:hover {
+    filter: none !important;
+    transform: none !important;
+}
+
+/* Keep original hover effects for topbar button image rotation only */
+.topbar-btn:hover .topbar-btn-img {
+    transform: rotate(-90deg);
+}
+
+body, * {
+    cursor: none !important;
+}
 
