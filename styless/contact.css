@@ -198,7 +198,7 @@ body {
   text-transform: lowercase;
   justify-content: flex-end; /* Right oriented */
   padding-right: 20px;
-  padding-left: 0;
+  padding-left: 10px;
 }
 
 /* Social links styling */
@@ -255,5 +255,3 @@ body {
   text-decoration: underline;
   color: #FF6060; /* Add underline on hover */
 }
-
-
