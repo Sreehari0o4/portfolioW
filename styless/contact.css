@@ -171,7 +171,7 @@ body {
 
 /* Column 1 styling */
 .contact-item.col1 {
-  color: #6D7B8C;
+  color: #1e2222;
   font-family: Coolvetica;
   font-size: 32px;
   font-style: normal;
@@ -182,7 +182,7 @@ body {
 
 /* Column 2 styling */
 .contact-item.col2 {
-  color: #000;
+  color: #696969;
   font-family: Coolvetica;
   font-size: 29px;
   font-style: normal;
@@ -197,7 +197,7 @@ body {
 
 /* Social text styling */
 .contact-item.col2.social {
-  color: #6D7B8C;
+  color: #1e2222;
   font-family: Coolvetica;
   font-size: 32px;
   font-style: normal;
@@ -209,7 +209,7 @@ body {
 
 /* Column 3 styling */
 .contact-item.col3 {
-  color: #000;
+  color: #696969;
   font-family: Coolvetica;
   font-size: 29px;
   font-style: normal;
@@ -224,7 +224,7 @@ body {
 
 /* Social links styling */
 .contact-item.col3.social-links {
-  color: #000;
+  color: #696969;
   font-family: Coolvetica;
   font-size: 32px;
   font-style: normal;
@@ -241,7 +241,7 @@ body {
 
 
 .contact-item.col3.social-links a {
-  color: #000;
+  color: #696969;
   font-family: Coolvetica;
   font-size: 28px;
   font-style: normal;
@@ -253,13 +253,13 @@ body {
 
 .contact-item.col3.social-links a:hover {
   text-decoration: underline;
-  color:#FF6060 /* Add underline on hover */
+  color:#000000 /* Add underline on hover */
 }
 
 /* Email and GitHub links styling */
 .contact-item.col2 a,
 .contact-item.col3 a:not(.social-links a) {
-  color: #000;
+  color: #696969;
   font-family: Coolvetica;
   font-size: 29px;
   font-style: normal;
@@ -274,7 +274,7 @@ body {
 .contact-item.col2 a:hover,
 .contact-item.col3 a:not(.social-links a):hover {
   text-decoration: underline;
-  color: #FF6060; /* Add underline on hover */
+  color: #000000; /* Add underline on hover */
 }
 
 /*ph number*/
@@ -284,8 +284,7 @@ body {
 }
 
 .phone-number:hover {
-    color: #FF6060; /* Change color on hover */
-    text-decoration: underline;
+    color: #000000; /* Change color on hover */
 }
 
 /* Top Bar Button Hover Effect */
