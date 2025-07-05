@@ -32,3 +32,11 @@ document.addEventListener('mousemove', (e) => {
     magicMouse.style.borderColor = borderColor;
     magicMouse.style.background = background;
 });
+
+
+/*page transition*/
+window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      document.querySelector('.about-content').classList.add('visible');
+    }, 10); // Delay in milliseconds
+  });
