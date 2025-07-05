@@ -361,17 +361,27 @@ body, * {
     transition: width 0.2s, height 0.2s;
 }
 
+
 /*page transition*/
 .page-transition {
   position: fixed;
-  left: 0; right: 0; bottom: -100vh; /* Start off-screen */
+  left: 0; 
+  right: 0; 
   height: 100vh;
-  background: #212121; /* Or any color you like */
   z-index: 9999;
-  transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.page-transition.active {
+
+/* page transition - slide up */
+.page-transition {
   bottom: 0;
+  background: #212121;
+  transform: translateY(100vh); /* Start below screen */
+}
+
+.page-transition.active {
+  transform: translateY(0); /* Slide up to cover screen */
   pointer-events: auto;
 }
+

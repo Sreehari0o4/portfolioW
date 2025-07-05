@@ -131,12 +131,11 @@ rightBtn.addEventListener('mouseleave', () => {
     rightLogo.src = originalRightSrc;
 });
 
-//page transition
+//page transition for about me (existing - slide up)
 function transitionToAboutMe() {
     const transition = document.getElementById('page-transition');
     transition.classList.add('active');
-    // Wait for the animation to finish (match the CSS transition duration)
     setTimeout(() => {
         window.location.href = 'pages/me.html';
-    }, 420); // 420ms matches the CSS transition
+    }, 420);
 }
