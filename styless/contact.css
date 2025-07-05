@@ -55,13 +55,13 @@ body {
   justify-content: center;
 }
 
-.topbar-btn-img {
+/* .topbar-btn-img {
   width: 7vw;
   max-width: 32px;
   height: auto;
   max-height: 32px;
   display: block;
-}
+} */
 
 /* Background Image - FILLS THE PAGE */
 .contact-bg-img {
@@ -290,8 +290,7 @@ body {
 
 /* Top Bar Button Hover Effect */
 .topbar-btn-img {
-  width: 7vw;
-  max-width: 32px;
+  max-width: 48px;
   height: auto;
   max-height: 32px;
   display: block;
