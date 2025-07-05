@@ -132,4 +132,16 @@ document.addEventListener('mousemove', (e) => {
 });
 
 
+/*page transition*/
+window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      document.querySelector('.about-content').classList.add('visible');
+    }, 10); // Delay in milliseconds
+  });
 
+  window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      document.querySelector('.about-content').classList.add('visible');
+      document.querySelector('.footer-animate').classList.add('visible');
+    }, 10);
+});
