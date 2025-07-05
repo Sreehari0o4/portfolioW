@@ -36,3 +36,24 @@ function showNotification(message) {
     }, 2000);
 }
 
+// Function to handle top bar button hover effects
+function initTopBarHover() {
+    const topbarBtn = document.querySelector('.topbar-btn');
+    const topbarImg = document.querySelector('.topbar-btn-img');
+    
+    if (topbarBtn && topbarImg) {
+        const originalSrc = topbarImg.src;
+        const hoverSrc = originalSrc.replace('backg.svg', 'backr.svg');
+        
+        topbarBtn.addEventListener('mouseenter', function() {
+            topbarImg.src = hoverSrc;
+        });
+        
+        topbarBtn.addEventListener('mouseleave', function() {
+            topbarImg.src = originalSrc;
+        });
+    }
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', initTopBarHover);

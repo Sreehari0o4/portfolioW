@@ -287,3 +287,17 @@ body {
     color: #FF6060; /* Change color on hover */
     text-decoration: underline;
 }
+
+/* Top Bar Button Hover Effect */
+.topbar-btn-img {
+  width: 7vw;
+  max-width: 32px;
+  height: auto;
+  max-height: 32px;
+  display: block;
+  transition: transform 0.3s ease; /* Smooth rotation transition */
+}
+
+.topbar-btn:hover .topbar-btn-img {
+  transform: rotate(-90deg);
+}
