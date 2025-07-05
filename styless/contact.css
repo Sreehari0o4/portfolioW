@@ -4,7 +4,7 @@ html, body {
   margin: 0;
   padding: 0;
   background: #E6E6E6;
-  overflow: hidden; /* Prevents scrolling */
+  overflow: hidden;
 }
 
 body {
@@ -24,7 +24,7 @@ body {
   background: #E6E6E6;
   overflow: hidden;
   box-sizing: border-box;
-  border-radius: 16px; /* Optional: for a modern look */
+  border-radius: 16px;
 }
 
 /* Top Bar */
@@ -32,7 +32,6 @@ body {
   display: flex;
   width: 100%;
   height: 68px;
-  padding: 0 0 0 0; /* Responsive right padding */
   justify-content: flex-end;
   align-items: center;
   background: transparent;
@@ -43,7 +42,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Top Bar Button */
 .topbar-btn {
   background: none;
   border: none;
@@ -55,15 +53,19 @@ body {
   justify-content: center;
 }
 
-/* .topbar-btn-img {
-  width: 7vw;
-  max-width: 32px;
+.topbar-btn-img {
+  max-width: 48px;
   height: auto;
   max-height: 32px;
   display: block;
-} */
+  transition: transform 0.3s ease;
+}
 
-/* Background Image - FILLS THE PAGE */
+.topbar-btn:hover .topbar-btn-img {
+  transform: rotate(-90deg);
+}
+
+/* Background Image */
 .contact-bg-img {
   position: absolute;
   left: 200px;
@@ -73,9 +75,163 @@ body {
   object-fit: cover;
   z-index: 1;
   background-color: transparent;
-  opacity: 0.7; /* Optional: to make the background image less prominent */
+  opacity: 0.7;
 }
 
+/* Heading */
+.main-heading {
+  position: absolute;
+  left: 50px;
+  top: 42px;
+  color: #FF6060;
+  text-align: center;
+  font-family: Impact;
+  font-size: 165px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -4px;
+  text-transform: lowercase;
+  margin: 0;
+  z-index: 5;
+}
+
+/* Contact Grid */
+.contact-box {
+  position: absolute;
+  left: 28%;
+  top: 320px;
+  box-sizing: border-box;
+  width: 888px;
+  height: 200px;
+  flex-shrink: 0;
+  z-index: 15;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  width: 100%;
+  height: 100%;
+  gap: 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+/* Row Spacing */
+.contact-item:nth-child(1),
+.contact-item:nth-child(2),
+.contact-item:nth-child(3) {
+  margin-bottom: -10px;
+}
+
+.contact-item:nth-child(4),
+.contact-item:nth-child(5),
+.contact-item:nth-child(6) {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.contact-item:nth-child(7),
+.contact-item:nth-child(8),
+.contact-item:nth-child(9) {
+  margin-bottom: 15px;
+}
+
+/* Column 1 */
+.contact-item.col1 {
+  color: #1e2222;
+  font-family: Coolvetica;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: lowercase;
+}
+
+/* Column 2 */
+.contact-item.col2 {
+  color: #6D7B8C;
+  font-family: Coolvetica;
+  font-size: 29px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.87px;
+  text-transform: lowercase;
+  justify-content: flex-end;
+  padding-right: 20px;
+  padding-left: 0;
+}
+
+.contact-item.col2.social {
+  color: #1e2222;
+  font-size: 32px;
+  letter-spacing: normal;
+}
+
+/* Column 3 */
+.contact-item.col3 {
+  color: #6D7B8C;
+  font-family: Coolvetica;
+  font-size: 29px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.87px;
+  text-transform: lowercase;
+  justify-content: flex-end;
+  padding-right: 20px;
+  padding-left: 10px;
+}
+
+.contact-item.col3.social-links {
+  font-size: 32px;
+  letter-spacing: normal;
+  gap: 20px;
+  display: flex;
+  padding-left: 0;
+}
+
+/* Links */
+.contact-item.col2 a,
+.contact-item.col3 a {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.contact-item.col2 a:hover,
+.contact-item.col3 a:hover {
+  text-decoration: underline;
+  color: #000000;
+}
+
+.contact-item.col3.social-links a {
+  font-size: 28px;
+}
+
+/* Phone Number */
+.phone-number {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.phone-number:hover {
+  color: #000000;
+}
 
 /* Responsive Styles */
 @media (max-width: 800px) {
@@ -103,199 +259,29 @@ body {
   }
 }
 
-/*heading*/
-.main-heading {
+/* Footer */
+.footer {
   position: absolute;
-  left: 50px;
-  top: 42px;
-  color: #FF6060;
-  text-align: center;
-  font-family: Impact;
-  font-size: 165px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -4px;
-  text-transform: lowercase;
-  margin: 0;
-  z-index: 5;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  /* background: #6D7B8C; */
 }
 
-/* Contact Form */
-.contact-box {
-  position: absolute;
-  left: 28%;
-  top: 320px; /* Adjust based on heading position + spacing */
-  box-sizing: border-box;
-  width: 888px;
-  height: 200px;
-  flex-shrink: 0;
-  z-index: 15;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  width: 100%;
-  height: 100%;
-  gap: 0;
-  row-gap: 0;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  padding-left: 20px; /* Adjust as needed */
-}
-
-/* Custom spacing for each row */
-.contact-item:nth-child(1),
-.contact-item:nth-child(2),
-.contact-item:nth-child(3) {
-  margin-bottom: -10px; /* Small space after row 1 */
-}
-
-.contact-item:nth-child(4),
-.contact-item:nth-child(5),
-.contact-item:nth-child(6) {
-    margin-top: 0px; /* Larger space before row 2 */
-    margin-bottom: 20px; /* Larger space after row 2 */
-}
-
-.contact-item:nth-child(7),
-.contact-item:nth-child(8),
-.contact-item:nth-child(9) {
-  margin-bottom: 15px; /* Medium space after row 3 */
-}
-
-/* Column 1 styling */
-.contact-item.col1 {
-  color: #1e2222;
-  font-family: Coolvetica;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-transform: lowercase;
-}
-
-/* Column 2 styling */
-.contact-item.col2 {
-  color: #696969;
-  font-family: Coolvetica;
-  font-size: 29px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.87px;
-  text-transform: lowercase;
-  justify-content: flex-end; /* Right oriented */
-  padding-right: 20px;
-  padding-left: 0;
-}
-
-/* Social text styling */
-.contact-item.col2.social {
-  color: #1e2222;
-  font-family: Coolvetica;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-transform: lowercase;
-  letter-spacing: normal;
-}
-
-/* Column 3 styling */
-.contact-item.col3 {
-  color: #696969;
-  font-family: Coolvetica;
-  font-size: 29px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.87px;
-  text-transform: lowercase;
-  justify-content: flex-end; /* Right oriented */
-  padding-right: 20px;
-  padding-left: 10px;
-}
-
-/* Social links styling */
-.contact-item.col3.social-links {
-  color: #696969;
-  font-family: Coolvetica;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-transform: lowercase;
-  letter-spacing: normal;
-  gap: 20px; /* Gap between links */
-  display: flex; /* This was missing! */
-  justify-content: flex-end; /* Right oriented */
-  padding-right: 20px;
-  padding-left: 0;
-}
-
-
-.contact-item.col3.social-links a {
-  color: #696969;
-  font-family: Coolvetica;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-transform: lowercase;
-  text-decoration: none; /* Remove underline */
-}
-
-.contact-item.col3.social-links a:hover {
-  text-decoration: underline;
-  color:#000000 /* Add underline on hover */
-}
-
-/* Email and GitHub links styling */
-.contact-item.col2 a,
-.contact-item.col3 a:not(.social-links a) {
-  color: #696969;
-  font-family: Coolvetica;
-  font-size: 29px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.87px;
-  text-transform: lowercase;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.contact-item.col2 a:hover,
-.contact-item.col3 a:not(.social-links a):hover {
-  text-decoration: underline;
-  color: #000000; /* Add underline on hover */
-}
-
-/*ph number*/
-.phone-number {
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
-
-.phone-number:hover {
-    color: #000000; /* Change color on hover */
-}
-
-/* Top Bar Button Hover Effect */
-.topbar-btn-img {
-  max-width: 48px;
+.footer-logo {
+  width: 80px;
   height: auto;
-  max-height: 32px;
-  display: block;
-  transition: transform 0.3s ease; /* Smooth rotation transition */
+  max-height: 150px;
+  /* opacity: 1; */
+  padding-right:14px;
+  transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
 }
 
-.topbar-btn:hover .topbar-btn-img {
-  transform: rotate(-90deg);
+.footer a:hover .footer-logo {
+  width: 80px; /* Custom size for hover image (me.png) */
+  max-height: 80px;
+  opacity: 1;
+  padding-bottom: 5px;
 }
+
+

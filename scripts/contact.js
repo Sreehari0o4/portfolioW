@@ -57,3 +57,29 @@ function initTopBarHover() {
 
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', initTopBarHover);
+
+// Function to handle footer logo hover effects
+function initFooterHover() {
+    const footerLink = document.querySelector('.footer a');
+    const footerImg = document.querySelector('.footer-logo');
+    
+    if (footerLink && footerImg) {
+        const originalSrc = footerImg.src;
+        const hoverSrc = originalSrc.replace('meR.png', 'me.png');
+        
+        footerLink.addEventListener('mouseenter', function() {
+            footerImg.src = hoverSrc;
+        });
+        
+        footerLink.addEventListener('mouseleave', function() {
+            footerImg.src = originalSrc;
+        });
+    }
+}
+
+// Add this to your existing DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', function() {
+    initTopBarHover();
+    initFooterHover(); // Add this line
+});
+
