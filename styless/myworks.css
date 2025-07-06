@@ -240,3 +240,25 @@ body{
     text-align: left;
     pointer-events: none;
 }
+
+/* More link - positioned at right end below rectangles */
+.more-link {
+    position: absolute;
+    top: 656px; /* Below the rectangles */
+    right: 68px; /* Right end, matching the description area width */
+    color: #2F3737;
+    font-family: Coolvetica;
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: underline;
+    text-transform: lowercase;
+    transition: opacity 0.3s ease, color 0.3s ease;
+    z-index: 600;
+    text-decoration: none; /* Remove underline for link */
+}
+
+.more-link:hover {
+    color: #1E2222;
+    opacity: 0.8;
+    text-decoration: underline; /* Keep underline on hover */
+}

@@ -6,6 +6,7 @@ const projectDescription = document.getElementById('project-description');
 const descriptionText = document.querySelector('.description-text');
 const techStack = document.getElementById('tech-stack');
 const defaultText = document.getElementById('default-text');
+const moreLink = document.getElementById('more-link');
 
 // Back button functionality
 backButton.addEventListener('mouseover', () => {
@@ -16,6 +17,14 @@ backButton.addEventListener('mouseover', () => {
 backButton.addEventListener('mouseout', () => {
     backButton.src = '../images/backb.svg';
     backButton.style.transform = 'rotate(0deg)';
+});
+
+// More link functionality
+moreLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    // Add your navigation logic here
+    console.log('Navigate to more projects');
+    // Example: window.location.href = '../pages/more-projects.html';
 });
 
 // Project hover functionality
