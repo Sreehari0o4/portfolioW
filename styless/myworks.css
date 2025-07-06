@@ -4,6 +4,27 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-italic';
+    src: url('../fonts/mont-italics.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Coolvetica';
+    src: url('../fonts/Coolvetica.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     font-family: Arial, sans-serif;
 }
@@ -84,5 +105,52 @@ body {
 
 .project-rectangle:hover {
     transform: scale(1.02);
+}
+
+/* Project info overlay */
+.project-info {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 500;
+}
+
+.project-info.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Project title - Direct positioning with width control */
+.project-title {
+    position: absolute;
+    top: 514px;        /* Change this value to move title up/down */
+    left: 62px;        /* Change this value to move title left/right */
+    width: 800px;      /* Change this to adjust title width */
+    color: #2F3737;
+    text-align: left;
+    font-family: Coolvetica;
+    font-size: 112px;   /* Change this to adjust title size */
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.28px;
+    text-transform: lowercase;
+}
+
+/* Project description - Direct positioning with width control */
+.project-description {
+    position: absolute;
+    top: 653px;        /* Change this value to move description up/down */
+    left: 62px;        /* Change this value to move description left/right */
+    width: 745px;      /* Change this to adjust description width */
+    height: 71px;      /* Change this to adjust description height */
+    color: #2F3737;
+    font-family: Montserrat;
+    font-size: 24px;   /* Change this to adjust description font size */
+    font-style: italic;
+    font-weight: 400;
+    line-height: 121.979%;
+    text-align: left;
 }
 
