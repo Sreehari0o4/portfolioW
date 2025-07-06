@@ -69,7 +69,7 @@ body{
 
 .back-button img {
     width: 54px;
-    height: 24px;
+    height: 28px;
     display: block;
     transition: transform 0.3s ease;
 }
@@ -151,20 +151,92 @@ body{
     pointer-events: none; /* Prevents mouse events on the title */
 }
 
-/* Project description - Direct positioning with width control */
+/* Project description - Updated with flex layout */
 .project-description {
     position: absolute;
-    top: 653px;        /* Change this value to move description up/down */
-    left: 62px;        /* Change this value to move description left/right */
-    width: 745px;      /* Change this to adjust description width */
-    height: 71px;      /* Change this to adjust description height */
+    top: 625px;
+    left: 62px;
+    width: 745px;
+    height: 71px;
     color: #2F3737;
     font-family: Montserrat;
-    font-size: 18px;   /* Change this to adjust description font size */
+    font-size: 18px;
     font-style: italic;
     font-weight: 400;
     line-height: 121.979%;
     text-align: left;
-    pointer-events: none; /* Prevents mouse events on the description */
+    pointer-events: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Changed from flex-start to flex-end */
 }
 
+/* Description text - left aligned */
+.description-text {
+    flex: 1;
+    margin-right: 20px;
+    line-height: 121.979%;
+}
+
+/* Tech stack - right aligned and bottom aligned */
+.tech-stack {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: right;
+    white-space: nowrap;
+    opacity: 0.8;
+    color: #2F3737;
+    line-height: 121.979%;
+    align-self: flex-end; /* Ensures it aligns with the last line */
+}
+
+/* Default text - visible when not hovering */
+.default-text {
+    position: absolute;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 400;
+    pointer-events: none;
+}
+
+.default-text.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Default title */
+.default-title {
+    position: absolute;
+    top: 514px;
+    left: 62px;
+    width: 1500px;
+    color: #2F3737;
+    text-align: left;
+    font-family: Coolvetica;
+    font-size: 112px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.28px;
+    text-transform: lowercase;
+    pointer-events: none;
+}
+
+/* Default description */
+.default-description {
+    position: absolute;
+    top: 653px;
+    left: 62px;
+    width: 745px;
+    height: 71px;
+    color: #2F3737;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 121.979%;
+    text-align: left;
+    pointer-events: none;
+}
