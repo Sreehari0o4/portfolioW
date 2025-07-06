@@ -49,15 +49,40 @@ body {
 /* Main heading */
 .main-heading {
     position: absolute;
-    left: 25px;
+    left: 62px;
     top: -22px;
     color: #1E2222;
     text-align: center;
     font-family: Impact;
-    font-size: 185px;
+    font-size: 145px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: -6.6px;
     text-transform: lowercase;
 }
+
+/* Project container */
+.project-container {
+    position: absolute;
+    top: 185px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+}
+
+/* Project rectangles */
+.project-rectangle {
+    width: 340px;
+    height: 420px;
+    background: #838383;
+    text-decoration: none;
+    display: block;
+}
+
+.project-rectangle:hover {
+    transform: scale(1.02);
+}
+
