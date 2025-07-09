@@ -111,6 +111,10 @@ body{
     border: none;
     transition: transform 0.2s ease, box-shadow 0.1s ease;
     transform-origin: center center; /* Ensures scaling from center */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
 }
 
 .project-rectangle:hover {
@@ -261,4 +265,18 @@ body{
     color: #1E2222;
     opacity: 0.8;
     text-decoration: underline; /* Keep underline on hover */
+}
+
+/* Specific project backgrounds */
+.project-rectangle[data-title="spare-parts management"] {
+    background-image: url('../images/projects/spareG.svg');
+}
+.project-rectangle[data-title="civic eye"] {
+    background-image: url('../images/civiceye.jpg');
+}
+.project-rectangle[data-title="planti case-study"] {
+    background-image: url('../images/planti.jpg');
+}
+.project-rectangle[data-title="Portfolio"] {
+    background-image: url('../images/portfolio.jpg');
 }
