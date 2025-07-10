@@ -139,3 +139,17 @@ function transitionToAboutMe() {
         window.location.href = 'pages/me.html';
     }, 420);
 }
+
+/*slide-in left(myworks)*/
+const myworksLink = document.getElementById('myworks-link');
+const pageSlideIn = document.getElementById('page-slidein-transition');
+
+if (myworksLink && pageSlideIn) {
+    myworksLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        pageSlideIn.classList.add('active');
+        setTimeout(() => {
+            window.location.href = myworksLink.href;
+        }, 600); // Match the CSS transition duration
+    });
+}
