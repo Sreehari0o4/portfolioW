@@ -257,14 +257,14 @@ body{
     font-weight: 400;
     text-decoration: underline;
     text-transform: lowercase;
-    transition: opacity 0.3s ease, color 0.3s ease;
+    transition: opacity 0.3s ease, color 0.1s ease;
     z-index: 600;
     text-decoration: none; /* Remove underline for link */
 }
 
 .more-link:hover {
-    color: #1E2222;
-    opacity: 0.8;
+    color: #ff6060;
+    opacity: 1;
     text-decoration: underline; /* Keep underline on hover */
 }
 
