@@ -240,3 +240,41 @@ body {
 .screenshot-img:hover {
     transform: scale(1.05);
 }
+
+/* Links Section */
+.links-section {
+    width: 95%;
+    max-width: 1200px;
+    margin: 30px auto 50px auto;
+    text-align: left;
+}
+
+.links-heading {
+    color: #979797;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 121.979%;
+    margin-bottom: 20px;
+    display: inline;
+    margin-right: 30px;
+}
+
+.links-container {
+    display: inline;
+}
+
+.project-link {
+    color: #6f6f6f;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 121.979%;
+    text-decoration: none;
+}
+
+.project-link:hover {
+    color: #5A6B7C;
+    text-decoration: underline;
+}
