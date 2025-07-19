@@ -271,7 +271,8 @@ body::before {
 
 .links-left {
     display: flex;
-    align-items: center;
+    align-items: baseline; /* Changed from center to baseline */
+    gap: 20px; /* Add some space between heading and link */
 }
 
 .links-heading {
@@ -281,7 +282,7 @@ body::before {
     font-style: normal;
     font-weight: 600;
     line-height: 121.979%;
-    margin-right: 30px;
+    margin-right: 0; /* Remove margin-right since we're using gap */
     margin-bottom: 0;
 }
 
@@ -296,6 +297,7 @@ body::before {
     font-weight: 600;
     line-height: 121.979%;
     text-decoration: none;
+    white-space: nowrap; /* Prevents link from wrapping */
 }
 
 .project-link:hover {
