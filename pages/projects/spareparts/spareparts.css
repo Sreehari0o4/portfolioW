@@ -246,7 +246,14 @@ body {
     width: 95%;
     max-width: 1200px;
     margin: 30px auto 50px auto;
-    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links-left {
+    display: flex;
+    align-items: center;
 }
 
 .links-heading {
@@ -256,9 +263,8 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: 121.979%;
-    margin-bottom: 20px;
-    display: inline;
     margin-right: 30px;
+    margin-bottom: 0;
 }
 
 .links-container {
@@ -277,4 +283,29 @@ body {
 .project-link:hover {
     color: #5A6B7C;
     text-decoration: underline;
+}
+
+.back-to-top-btn {
+    background: url('../../../images/backg.svg') no-repeat center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    
+    width: 44px;
+    height: 44px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.back-to-top-btn:hover {
+    background: url('../../../images/backorng.svg') no-repeat center;
+    transform: scale(1.1);
+    width: 48px;
+    height: 48px;  
+}
+
+.back-to-top-icon {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
 }
