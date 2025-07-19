@@ -203,3 +203,40 @@ body {
 .outcome-list li {
     margin-bottom: 8px;
 }
+
+/* Screenshots Section */
+.screenshots-section {
+    width: 95%;
+    max-width: 1200px;
+    margin: 50px auto 0 auto;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.screenshots-heading {
+    color: #6D7B8C;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.screenshots-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px; /* Increased from 800px to match table width */
+    margin: 0 auto;
+}
+
+.screenshot-img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    border:#2F3737 1px solid;
+}
+
+.screenshot-img:hover {
+    transform: scale(1.05);
+}
