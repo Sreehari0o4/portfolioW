@@ -319,13 +319,49 @@ body::before {
 
 .back-to-top-btn:hover {
     background: url('../../../images/backorng.svg') no-repeat center;
-    transform: scale(1.1);
-    width: 48px;
-    height: 48px;  
+    background-size: contain;
+    transform: scale(1.2);
 }
 
 .back-to-top-icon {
     width: 44px;
     height: 44px;
+    object-fit: contain;
+}
+
+/* Topbar */
+.topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 40px; /* Increased from 30px to 40px */
+    z-index: 100;
+}
+
+.topbar-button {
+    margin-top: 15px; /* Adjusted to align with the topbar height */
+    background: transparent;
+    border: none;
+    padding: 15px; /* Increased from 10px to 15px */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border-radius: 4px; /* Add some border radius for better visual */
+}
+
+.topbar-button:hover {
+    background: transparent;
+    transform: scale(1.1);
+    
+}
+
+.back-icon {
+    width: 46px;
+    height: 46px;
     object-fit: contain;
 }
