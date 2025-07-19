@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civic Eye</title>
+    <link rel="stylesheet" href="civic.css">
+</head>
+<body>
+    <div class="topbar">
+        <button class="topbar-button" onclick="window.location.href='../../myworks.html'">
+            <img src="images/backb.svg" alt="Back" class="back-icon">
+        </button>
+    </div>
+    <div class="hero-block"></div>
+    <h1 class="main-title">Civic Eye</h1>
+    <p class="sub-title">Flutter Developer | Backend Integrator</p>
+    
+    <table class="info-table">
+        <tr>
+            <td class="info-cell">
+                <h3 class="cell-heading">Overview</h3>
+                <p class="cell-description">Civic Eye is a mobile application that allows citizens to report traffic rule violations they witness in their surroundings—such as illegal parking, helmetless riding, signal jumping, or wrong-way driving. The app empowers users to upload photographic evidence and submit brief details of the violation.<br>A key innovation in this project is the integration of a Large Language Model (LLM) that generates automated challans based on the nature of the violation. Once verified, a percentage of the fine collected is rewarded to the reporting citizen, encouraging active civic participation and traffic discipline.</p>
+            </td>
+            <td class="empty-cell"></td>
+        </tr>
+        <tr>
+            <td class="empty-cell"></td>
+            <td class="info-cell">
+                <h3 class="cell-heading">Problem Statement</h3>
+                <p class="cell-description">Reporting civic issues is often tedious and unrewarded. Citizens are either unaware of where to report or demotivated due to lack of acknowledgment. Civic Eye addresses this by:</p>
+                <ul class="cell-description problem-solution-list">
+                    <li>Offering a simple reporting interface</li>
+                    <li>Using an LLM (Large Language Model) to auto-generate challans for valid cases</li>
+                    <li>Rewarding the reporting citizen with a percentage of the fine</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="info-cell">
+                <h3 class="cell-heading">My Contribution</h3>
+                <ul class="cell-description contribution-list">
+                    <li>Developed the full mobile app UI in Flutter</li>
+                    <li>Integrated Appwrite for:
+                        <ul>
+                            <li>User authentication</li>
+                            <li>Database for storing issues</li>
+                            <li>File storage for uploaded images</li>
+                        </ul>
+                    </li>
+                    <li>Connected a LLM-based API that generates a legally formatted challan based on issue data</li>
+                    <li>Implemented logic to assign rewards when reports lead to a fine</li>
+                    <li>Built issue submission and viewing functionality</li>
+                </ul>
+            </td>
+            <td class="empty-cell"></td>
+        </tr>
+    </table>
+    
+    <div class="tools-section">
+        <h3 class="tools-heading">Tools & Technologies</h3>
+        <div class="tools-container">
+            <img src="images/flutter.svg" alt="Flutter" class="tool-icon" title="Flutter">
+            <img src="images/appwrite.svg" alt="Appwrite" class="tool-icon" title="Appwrite-database">
+            <img src="images/git.svg" alt="Git" class="tool-icon" title="Git">
+            <img src="images/github.svg" alt="GitHub" class="tool-icon" title="GitHub">
+            <img src="images/gpt.svg" alt="GPT" class="tool-icon" title="LLM-OpenAI">
+            <img src="images/figma.svg" alt="Figma" class="tool-icon" title="Figma">
+        </div>
+    </div>
+
+    <table class="challenge-solution-table">
+        <tr>
+            <td class="empty-cell"></td>
+            <td class="info-cell">
+                <h3 class="cell-heading">Challenges and Solutions</h3>
+                <ul class="cell-description challenge-solution-list">
+                    <li><strong>Challenge:</strong> Understanding Violation Context for Challan Generation<br>
+                    <strong>Solution:</strong> Integrated a custom prompt with an LLM that extracts the type of violation and generates a traffic challan in proper legal format.</li>
+                    <li><strong>Challenge:</strong> Verifying Report Authenticity<br>
+                    <strong>Solution:</strong> Created a tagging system to allow backend or admin review before the challan is issued and reward is unlocked.</li>
+                    <li><strong>Challenge:</strong> Secure Media and Data Handling<br>
+                    <strong>Solution:</strong> Used Appwrite’s file storage and database with authentication to ensure data protection and proper user tracking.</li>
+                    <li><strong>Challenge:</strong> Incentivizing without Over-complication<br>
+                    <strong>Solution:</strong>  Used a simple reward flag system tied to successful challan generation, viewable in the user’s report history.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="info-cell">
+                <h3 class="cell-heading">Outcome and Result</h3>
+                <ul class="cell-description outcome-list">
+                    <li>Delivered a fully functional MVP for traffic violation reporting</li>
+                    <li>Successfully generated challans dynamically with LLMs during test runs</li>
+                    <li>Positive feedback for the reward system — users found it motivating and fair</li>
+                    <li>System prepared for potential scaling with admin dashboards, law enforcement APIs, or payment integration</li>
+                </ul>
+            </td>
+            <td class="empty-cell"></td>
+        </tr>
+    </table>
+
+    <div class="screenshots-section">
+        <h3 class="screenshots-heading">Project Screenshots</h3>
+        <div class="screenshots-grid">
+            <img src="images/1.png" alt="Screenshot 1" class="screenshot-img" title="User home page and Report violation page">
+            <img src="images/2.png" alt="Screenshot 2" class="screenshot-img" title="Report status page and Reward page">
+            <img src="images/3.png" alt="Screenshot 3" class="screenshot-img" title="Officer dashboard page and Report details page">
+            <img src="images/4.png" alt="Screenshot 4" class="screenshot-img" title="Violation action page and Blocked user page">
+        </div>
+    </div>
+
+    <div class="links-section">
+        <div class="links-left">
+            <h3 class="links-heading">Links</h3>
+            <a href="https://github.com/Sreehari0o4/CivicSafety-AndroidProject" target="_blank" class="project-link">GitHub Repo</a>
+            <a href="resources/projectReport.pdf" download="CivicEye_Project_Report.pdf" class="project-link">Project Report</a>
+        </div>
+        <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        </button>
+    </div>
+
+    <footer class="bottom-bar">
+        <div class="bottom-left">
+            <span class="tagline">Empowering citizens for safer roads</span>
+            <span class="developer">Developed by Sreehari S Kumar</span>
+        </div>
+        <div class="bottom-right">
+            <span class="copyright">© 2025 Civic Eye. All rights reserved</span>
+        </div>
+    </footer>
+    <div class="custom-cursor"></div>
+    <script src="magic-mouse.js"></script>
+</body>
+</html>
