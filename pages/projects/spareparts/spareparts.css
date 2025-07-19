@@ -8,6 +8,15 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     position: relative;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 0; /* Ensure no bottom padding */
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Set html height to 100% */
 }
 
 body::before {
@@ -16,7 +25,7 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% + 100px); /* Extended height to cover bottom padding */
+    height: calc(100%); /* Extended height to cover bottom padding */
     background-image: url('images/sparepartbg.svg');
     background-size: cover;
     background-position: 50px 220px;
@@ -364,4 +373,51 @@ body::before {
     width: 46px;
     height: 46px;
     object-fit: contain;
+}
+
+/* Bottom Bar */
+.bottom-bar {
+    width: 100%;
+    background: #2F3737;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 10;
+}
+
+.bottom-left {
+    display: flex;
+    align-items: center; /* Changed from flex-direction: column to align horizontally */
+    gap: 30px; /* Increased gap for better spacing between items */
+}
+
+.tagline {
+    color: #FF6060;
+    font-family: Coolvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.developer {
+    color: #cccccc;
+    font-family: Coolvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.bottom-right {
+    display: flex;
+    align-items: center;
+}
+
+.copyright {
+    color: #CCCCCC;
+    font-family: Coolvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: right;
 }
