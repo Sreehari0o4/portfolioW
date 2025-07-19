@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body, button,a{
+    cursor: none !important;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -25,14 +29,14 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100%); /* Extended height to cover bottom padding */
+    height: calc(100%);
     background-image: url('images/sparepartbg.svg');
     background-size: cover;
     background-position: 50px 220px;
     background-repeat: no-repeat;
     background-attachment: scroll;
     opacity: 1;
-    z-index: -1;
+    z-index: -1; /* Keep background behind everything */
     pointer-events: none;
 }
 
@@ -420,4 +424,26 @@ body::before {
     font-size: 14px;
     font-weight: 400;
     text-align: right;
+}
+
+/* Magic Mouse */
+/* Base style */
+.custom-cursor {
+    width: 38px;
+    height: 38px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none; /* So it doesn't block clicks */
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.2s ease, transform 0.2s ease, border 0.2s ease;
+    background-color: transparent;
+}
+
+/* When hovering over clickable items */
+.custom-cursor.clickable {
+    background-color: rgba(0, 0, 0, 0.8); /* or white, depending on your theme */
+    transform: translate(-50%, -50%) scale(1.2);
+    border: 2px solid transparent;
 }
