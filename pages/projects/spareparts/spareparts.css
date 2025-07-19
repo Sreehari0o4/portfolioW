@@ -69,3 +69,53 @@ body {
     min-width: max-content; /* Prevents shrinking */
     white-space: nowrap; /* Keeps text on one line */
 }
+
+/* table*/
+.info-table {
+    width: 95%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    margin: 50px auto 0 auto;
+    position: relative;
+    top: -50px;
+}
+
+.info-cell, .empty-cell {
+    width: 50%;
+    padding-bottom: 18px;
+    vertical-align: top;
+}
+
+.empty-cell {
+    background: transparent;
+}
+
+.cell-heading {
+    color: #6D7B8C;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 121.979%;
+    margin-bottom: 10px;
+}
+
+.cell-description {
+    color: #6D7B8C;
+    text-align: justify;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 121.979%;
+}
+
+.contribution-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.contribution-list li {
+    margin-bottom: 8px;
+}
