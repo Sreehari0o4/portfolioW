@@ -119,3 +119,87 @@ body {
 .contribution-list li {
     margin-bottom: 8px;
 }
+
+/* tools used */
+.tools-section {
+    width: 95%;
+    max-width: 1200px;
+    margin: 50px auto 0 auto;
+    text-align: center;
+    background: #f5f5f5;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.tools-heading {
+    color: #6D7B8C;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.tools-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.tool-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.tool-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Challenge & Solution Table */
+.challenge-solution-table {
+    width: 95%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    margin: 50px auto 0 auto;
+    position: relative;
+}
+
+.challenge-solution-table .info-cell, 
+.challenge-solution-table .empty-cell {
+    width: 50%;
+    padding: 30px;
+    vertical-align: top;
+}
+
+.challenge-solution-table .empty-cell {
+    background: transparent;
+}
+
+.challenge-solution-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.challenge-solution-list li {
+    margin-bottom: 12px;
+}
+
+.challenge-solution-list strong {
+    color: #5A6B7C;
+    font-weight: 600;
+}
+
+.outcome-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.outcome-list li {
+    margin-bottom: 8px;
+}
