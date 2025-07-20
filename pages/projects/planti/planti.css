@@ -97,7 +97,7 @@ body::before {
     margin: 0 auto;
     z-index: 1;
     width: 100%;
-    padding-right: 80px;
+    padding-right: 40px;
     min-width: max-content; /* Prevents shrinking */
     white-space: nowrap; /* Keeps text on one line */
 }
