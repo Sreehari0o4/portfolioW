@@ -1,0 +1,489 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, button,a{
+    cursor: none !important;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 0; /* Ensure no bottom padding */
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Set html height to 100% */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100%);
+    background-image: url('images/sparepartbg.svg');
+    background-size: cover;
+    background-position: 50px 220px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    opacity: 1;
+    z-index: -1; /* Keep background behind everything */
+    pointer-events: none;
+}
+
+.hero-block {
+    width: 100%;
+    height: 260px;
+    background: #FF6060;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 800px; /* Set minimum width for hero block */
+}
+
+@font-face {
+    font-family: 'Coolvetica';
+    src: url('../../../fonts/Coolvetica.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../../../fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.main-title {
+    color: #2F3737;
+    text-align: left;
+    padding-left: 150px;
+    font-family: Coolvetica, Arial, sans-serif;
+    font-size: 128px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.28px;
+    text-transform: capitalize;
+    position: relative;
+    top: -80px;
+    margin: 0 auto;
+    z-index: 1;
+    width: 100%;
+    min-width: max-content; /* Prevents shrinking */
+    white-space: nowrap; /* Keeps text on one line */
+}
+
+.sub-title {
+    color: #838383;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 121.979%;
+    text-align: right;
+    position: relative;
+    top: -100px;
+    margin: 0 auto;
+    z-index: 1;
+    width: 100%;
+    padding-right: 80px;
+    min-width: max-content; /* Prevents shrinking */
+    white-space: nowrap; /* Keeps text on one line */
+}
+
+/* table*/
+.info-table {
+    width: 95%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    margin: 50px auto 0 auto;
+    position: relative;
+    top: -50px;
+}
+
+.info-cell, .empty-cell {
+    width: 50%;
+    padding-bottom: 18px;
+    vertical-align: top;
+}
+
+.empty-cell {
+    background: transparent;
+}
+
+.cell-heading {
+    color: #3f3f3f;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 121.979%;
+    margin-bottom: 10px;
+}
+
+.cell-description {
+    color: #6D7B8C;
+    text-align: justify;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 121.979%;
+}
+
+.contribution-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.contribution-list li {
+    margin-bottom: 8px;
+}
+
+.contribution-list ul {
+    margin: 10px 0 0 20px;
+    padding-left: 20px; /* Add left padding for indentation */
+}
+
+.contribution-list ul li {
+    list-style-type: disc;
+    margin: 8px 0; /* Increased margin for more space between items */
+    font-size: 16px;
+    line-height: 1.4;
+    padding-left: 5px; /* Add space before the text */
+}
+
+.contribution-list > li {
+    margin-bottom: 12px; /* More space between main list items */
+}
+
+/* Alternative approach - add space using pseudo-element */
+.contribution-list ul li::before {
+    content: '';
+    display: inline-block;
+    width: 8px; /* Adjust width for desired spacing */
+}
+
+/* tools used */
+.tools-section {
+    width: 95%;
+    max-width: 1200px;
+    margin: 50px auto 0 auto;
+    text-align: center;
+    
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.tools-heading {
+    color: #3f3f3f;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.tools-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.tool-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.tool-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Challenge & Solution Table */
+.challenge-solution-table {
+    width: 95%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    margin: 50px auto 0 auto;
+    position: relative;
+}
+
+.challenge-solution-table .info-cell, 
+.challenge-solution-table .empty-cell {
+    width: 50%;
+    padding: 30px;
+    vertical-align: top;
+}
+
+.challenge-solution-table .empty-cell {
+    background: transparent;
+}
+
+.challenge-solution-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.challenge-solution-list li {
+    margin-bottom: 12px;
+}
+
+.challenge-solution-list strong {
+    color: #5A6B7C;
+    font-weight: 600;
+}
+
+.outcome-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.outcome-list li {
+    margin-bottom: 8px;
+}
+
+/* Screenshots Section */
+.screenshots-section {
+    width: 95%;
+    max-width: 1200px;
+    margin: 50px auto 0 auto;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.screenshots-heading {
+    color: #3f3f3f;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.screenshots-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px; /* Increased from 800px to match table width */
+    margin: 0 auto;
+}
+
+.screenshot-img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    border:#2F3737 1px solid;
+}
+
+.screenshot-img:hover {
+    transform: scale(1.05);
+}
+
+/* Links Section */
+.links-section {
+    width: 95%;
+    max-width: 1200px;
+    margin: 30px auto 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links-left {
+    display: flex;
+    align-items: baseline; /* Changed from center to baseline */
+    gap: 20px; /* Add some space between heading and link */
+}
+
+.links-heading {
+    color: #3f3f3f;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 121.979%;
+    margin-right: 0; /* Remove margin-right since we're using gap */
+    margin-bottom: 0;
+}
+
+.links-container {
+    display: inline;
+}
+
+.project-link {
+    color: #6f6f6f;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 121.979%;
+    text-decoration: none;
+    white-space: nowrap; /* Prevents link from wrapping */
+}
+
+.project-link:hover {
+    color: #ff6060;
+    text-decoration: underline;
+}
+
+.back-to-top-btn {
+    background: url('../../../images/backg.svg') no-repeat center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    
+    width: 44px;
+    height: 44px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.back-to-top-btn:hover {
+    background: url('../../../images/backorng.svg') no-repeat center;
+    background-size: contain;
+    transform: scale(1.2);
+}
+
+.back-to-top-icon {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+
+/* Topbar */
+.topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 40px; /* Increased from 30px to 40px */
+    z-index: 100;
+}
+
+.topbar-button {
+    margin-top: 15px; /* Adjusted to align with the topbar height */
+    background: transparent;
+    border: none;
+    padding: 15px; /* Increased from 10px to 15px */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border-radius: 4px; /* Add some border radius for better visual */
+}
+
+.topbar-button:hover {
+    background: transparent;
+    transform: scale(1.1);
+    
+}
+
+.back-icon {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+}
+
+/* Bottom Bar */
+.bottom-bar {
+    width: 100%;
+    background: #2F3737;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 10;
+}
+
+.bottom-left {
+    display: flex;
+    align-items: center; /* Changed from flex-direction: column to align horizontally */
+    gap: 30px; /* Increased gap for better spacing between items */
+}
+
+.tagline {
+    color: #FF6060;
+    font-family: Coolvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.developer {
+    color: #cccccc;
+    font-family: Coolvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.bottom-right {
+    display: flex;
+    align-items: center;
+}
+
+.copyright {
+    color: #CCCCCC;
+    font-family: Coolvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: right;
+}
+
+/* Magic Mouse */
+/* Base style */
+.custom-cursor {
+    width: 38px;
+    height: 38px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none; /* So it doesn't block clicks */
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.2s ease, transform 0.2s ease, border 0.2s ease;
+    background-color: transparent;
+}
+
+/* When hovering over clickable items */
+.custom-cursor.clickable {
+    background-color: rgba(0, 0, 0, 0.8); /* or white, depending on your theme */
+    transform: translate(-50%, -50%) scale(1.2);
+    border: 2px solid transparent;
+}
+
+.problem-solution-list {
+    margin: 15px 0 0 0;
+    padding-left: 20px;
+}
+
+.problem-solution-list li {
+    list-style-type: disc;
+    margin: 8px 0;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #6f6f6f;
+}
