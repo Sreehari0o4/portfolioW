@@ -22,7 +22,7 @@ document.addEventListener('mousemove', (e) => {
 
         // Specific color assignments for different elements
         if (elem.matches('.topbar-button, .back-icon')) {
-            fill = '#ff6060'; // Red for topbar elements
+            fill = '#3DCB70'; // Red for topbar elements
         }
 
         if (elem.matches('.back-to-top-btn')) {
