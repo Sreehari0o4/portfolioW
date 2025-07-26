@@ -1,7 +1,7 @@
 const magicMouse = document.querySelector('.custom-cursor');
 
-// Clickable selectors specific to spareparts page
-const clickableSelectors = 'a, button, .topbar-button, .back-to-top-btn, .project-link, .screenshot-img, .back-icon, .main-title, .tagline, .developer, .copyright';
+// Clickable selectors specific to planti page
+const clickableSelectors = 'a, button, .topbar-button, .back-to-top-btn, .project-link, .screenshot-img, .back-icon, .main-title, .tagline, .developer, .copyright, .enlarge-on-hover, .enlarge-on-hover img';
 
 document.addEventListener('mousemove', (e) => {
     magicMouse.style.left = e.clientX + 'px';
@@ -25,8 +25,15 @@ document.addEventListener('mousemove', (e) => {
             fill = '#3DCB70'; // Red for topbar elements
         }
 
+        if (elem.closest('.enlarge-on-hover') || elem.matches('.enlarge-on-hover')) {
+            fill = '#3DCB70'; // Green for enlarge on hover elements and images
+            // Force cursor to show the effect
+            background = fill;
+            borderColor = fill;
+        }
+
         if (elem.matches('.back-to-top-btn')) {
-            fill = '#ff6060'; // Red for back-to-top button
+            fill = '#3DCB70'; // Green for back-to-top button
         }
 
         if (elem.matches('.project-link')) {
@@ -46,7 +53,7 @@ document.addEventListener('mousemove', (e) => {
         }
 
         if (elem.matches('.tagline')) {
-            fill = '#ff6060'; // Red for tagline
+            fill = '#3DCB70'; // Red for tagline
         }
 
         if (elem.matches('.developer')) {

@@ -361,7 +361,7 @@ body::before {
 }
 
 .back-to-top-btn:hover {
-    background: url('../../../images/backorng.svg') no-repeat center;
+    background: url('../../../images/backgreen.svg') no-repeat center;
     background-size: contain;
     transform: scale(1.2);
 }
@@ -430,7 +430,7 @@ body::before {
 }
 
 .tagline {
-    color: #FF6060;
+    color: #3DCB70;
     font-family: Coolvetica, Arial, sans-serif;
     font-size: 24px;
     font-weight: 400;
