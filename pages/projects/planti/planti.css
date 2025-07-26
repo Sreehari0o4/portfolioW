@@ -144,7 +144,9 @@ body::before {
 
 .ch2{
     font-weight: 600;
-    font-size: 34px;
+    font-size: 44px;
+    color: #000000;
+    
 }
 
 .contribution-list {
