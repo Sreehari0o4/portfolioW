@@ -22,11 +22,11 @@ document.addEventListener('mousemove', (e) => {
 
         // Specific color assignments for different elements
         if (elem.matches('.topbar-button, .back-icon')) {
-            fill = '#ff6060'; // Red for topbar elements
+            fill = '#72A5FF'; // Blue for topbar elements
         }
 
         if (elem.matches('.back-to-top-btn')) {
-            fill = '#ff6060'; // Red for back-to-top button
+            fill = '#72A5FF'; // Blue for back-to-top button
         }
 
         if (elem.matches('.project-link')) {
@@ -46,7 +46,7 @@ document.addEventListener('mousemove', (e) => {
         }
 
         if (elem.matches('.tagline')) {
-            fill = '#ff6060'; // Red for tagline
+            fill = '#72A5FF'; // Blue for tagline
         }
 
         if (elem.matches('.developer')) {
