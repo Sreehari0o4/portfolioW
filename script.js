@@ -1,6 +1,6 @@
 const magicMouse = document.getElementById('magic-mouse');
 
-const clickableSelectors = 'a, .works, .contact, button:not(.logo-btn), .rotating-logo, .lbtn, .slide-menu-item';
+const clickableSelectors = 'a, .works, .contact, button:not(.logo-btn), .rotating-logo, .lbtn, .slide-menu-item, .logo-btn, .logo';
 
 document.addEventListener('mousemove', (e) => {
     magicMouse.style.left = e.clientX + 'px';
@@ -124,13 +124,22 @@ const rightLogo = rightBtn.querySelector('.logo');
 const originalRightSrc = rightLogo.src;
 
 rightBtn.addEventListener('mouseenter', () => {
-    if (!isMenuOpen) { // Only change to red X if menu is closed
-        rightLogo.src = 'images/xr.png';
+    // Ensure magic mouse is visible
+    if (magicMouse) {
+        magicMouse.style.opacity = '1';
+    }
+    
+    if (isMenuOpen) { // Change to red minus if menu is open
+        rightLogo.src = 'images/minusr.svg';
+    } else { // Change to red X if menu is closed
+        rightLogo.src = 'images/xr.svg';
     }
 });
 
 rightBtn.addEventListener('mouseleave', () => {
-    if (!isMenuOpen) { // Only change back to original if menu is closed
+    if (isMenuOpen) { // Change back to blue minus if menu is open
+        rightLogo.src = minusImg; // minusImg is defined as 'images/minusb.svg'
+    } else { // Change back to original blue X if menu is closed
         rightLogo.src = originalRightSrc;
     }
 });
@@ -162,12 +171,20 @@ if (myworksLink && pageSlideIn) {
 const topMenuBtn = document.getElementById('top-menu-btn');
 const slidingMenu = document.getElementById('sliding-menu');
 const rightBtnImg = document.querySelector('.right-bar .logo-btn .logo');
-const originalImg = 'images/xb.png';
-const minusImg = 'images/minus.png';
+const originalImg = 'images/xb.svg'; // Original image for X
+const minusImg = 'images/minusb.svg'; // Blue minus image
+const minusRedImg = 'images/minusr.svg'; // Red minus image
 let isMenuOpen = false;
 
 if (topMenuBtn && slidingMenu) {
     console.log('Top menu button and sliding menu found'); // Debug
+    
+    // Add event listeners for mouse visibility on minus button
+    rightBtnImg.addEventListener('mouseenter', () => {
+        if (magicMouse) {
+            magicMouse.style.opacity = '1';
+        }
+    });
     
     topMenuBtn.addEventListener('click', function(e) {
         console.log('Top menu button clicked'); // Debug
@@ -177,9 +194,19 @@ if (topMenuBtn && slidingMenu) {
         if (isMenuOpen) {
             slidingMenu.classList.remove('active');
             rightBtnImg.src = originalImg; // Change back to X image
+            
+            // Add a rotation animation when changing back to X
+            rightBtnImg.style.transition = 'transform 0.3s ease';
+            rightBtnImg.style.transform = 'rotate(90deg)';
+            
+            // Reset the rotation after the transition
+            setTimeout(() => {
+                rightBtnImg.style.transform = '';
+            }, 300);
         } else {
             slidingMenu.classList.add('active');
             rightBtnImg.src = minusImg; // Change to minus image when active
+            rightBtnImg.style.transform = ''; // Remove any rotation
         }
         isMenuOpen = !isMenuOpen;
         console.log('Menu is now ' + (isMenuOpen ? 'open' : 'closed')); // Debug
@@ -190,7 +217,17 @@ if (topMenuBtn && slidingMenu) {
         if (isMenuOpen && e.target !== topMenuBtn && !topMenuBtn.contains(e.target) && 
             e.target !== slidingMenu && !slidingMenu.contains(e.target)) {
             slidingMenu.classList.remove('active');
-            rightBtnImg.src = originalImg; // Also reset the image
+            rightBtnImg.src = originalImg; // Reset the image back to blue X
+            
+            // Add a rotation animation when changing back to X
+            rightBtnImg.style.transition = 'transform 0.3s ease';
+            rightBtnImg.style.transform = 'rotate(90deg)';
+            
+            // Reset the rotation after the transition
+            setTimeout(() => {
+                rightBtnImg.style.transform = '';
+            }, 300);
+            
             isMenuOpen = false;
         }
     });

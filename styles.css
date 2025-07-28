@@ -379,8 +379,9 @@ body, * {
 }
 
 
-.right-bar .logo-btn:hover .logo {
-    /* Removed rotation effect */
+.right-bar .logo-btn:hover .logo:not([src*="minus"]) {
+    /* Restore rotation effect but exclude minus image */
+    transform: rotate(90deg);
     background: #ffffff;
 }
 
