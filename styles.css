@@ -128,31 +128,29 @@ a, a:visited {
 }
 
 .sliding-menu {
-    position: fixed; /* Change to fixed positioning to be over the page */
+    position: fixed; /* Fixed positioning to be over the page */
     right: -200px; /* Start off-screen */
-    top: 0; /* Align with the top of the page/top bar */
-    height: 64px; /* Match the height of the top bar */
+    top: 21px; /* Adjust top position to align better with the top bar */
+    height: 32px; /* Reduced height for a more compact appearance */
     display: flex;
     align-items: center; /* Vertically center content */
-    background-color: #fff;
-    padding: 0 25px; /* Remove vertical padding, keep horizontal */
-    border-radius: 0; /* Remove border radius for a seamless look */
+    background-color: #ffffff00;
+    padding: 0 20px; /* Horizontal padding */
+    border-radius: 4px; /* Add slight rounded corners */
     white-space: nowrap;
-    display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 10px;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    z-index: 999; /* Just below the top-bar z-index to appear as an extension */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow matching the top bar */
-    border-bottom: 1px solid rgba(0,0,0,0.05); /* Subtle border for definition */
+    z-index: 999; /* Just below the top-bar z-index */
+    /*box-shadow: 0 2px 10px rgba(0,0,0,0.05);  Subtle shadow */
 }
 
 .sliding-menu.active {
     opacity: 1;
     visibility: visible;
-    right: 64px; /* Slide in to exactly meet the right-bar */
+    right: 70px; /* Position to the left of the button */
 }
 
 .slide-menu-item {
@@ -162,19 +160,19 @@ a, a:visited {
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 64px; /* Match the height to center text vertically */
+    line-height: 32px; /* Match the reduced height */
     letter-spacing: -0.2px;
     text-transform: lowercase;
     text-decoration: none;
     white-space: nowrap;
-    display: inline-block; /* Changed to inline-block for horizontal layout */
-    height: 100%; /* Take full height of the container */
-    padding: 0 10px; /* Add horizontal padding between items */
+    display: inline-block;
+    height: 100%;
+    padding: 0 10px; 
     transition: color 0.2s ease;
 }
 
 .slide-menu-item:hover {
-    color: #333;
+    color: #ff6060;
 }
 
 .contact {
@@ -204,7 +202,7 @@ a, a:visited {
     --default-lava-filter: opacity(100%) saturate(1);
     --shadow-small: 0 0 10px rgba(0, 0, 0, .2);
     --shadow-large: 0 0 40px rgba(0, 0, 0, .2);
-    --bg: #fffbee;
+    
     --bg-rgb: 255, 251, 238;
     --text: #191919;
     --text-rgb: 25, 25, 25;
