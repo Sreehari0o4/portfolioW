@@ -137,6 +137,12 @@ rightBtn.addEventListener('mouseenter', () => {
 });
 
 rightBtn.addEventListener('mouseleave', () => {
+    // Don't change the image if we're in the process of clicking it
+    // This helps prevent jaggedness when changing from minusr to xr
+    if (isClickInProgress) {
+        return; // Skip changing the image if a click is in progress
+    }
+    
     if (isMenuOpen) { // Change back to blue minus if menu is open
         rightLogo.src = minusImg; // minusImg is defined as 'images/minusb.svg'
     } else { // Change back to original blue X if menu is closed
@@ -175,6 +181,7 @@ const originalImg = 'images/xb.svg'; // Original image for X
 const minusImg = 'images/minusb.svg'; // Blue minus image
 const minusRedImg = 'images/minusr.svg'; // Red minus image
 let isMenuOpen = false;
+let isClickInProgress = false; // Flag to prevent mouseleave from changing the image during clicks
 
 if (topMenuBtn && slidingMenu) {
     console.log('Top menu button and sliding menu found'); // Debug
@@ -191,9 +198,12 @@ if (topMenuBtn && slidingMenu) {
         e.preventDefault(); // Prevent any default action
         e.stopPropagation(); // Prevent event bubbling
         
+        // Set the flag to prevent mouseleave from changing the image
+        isClickInProgress = true;
+        
         if (isMenuOpen) {
             slidingMenu.classList.remove('active');
-            rightBtnImg.src = originalImg; // Change back to X image
+            rightBtnImg.src = 'images/xr.svg'; // Change to red X image instead of blue X
             
             // Add a rotation animation when changing back to X
             rightBtnImg.style.transition = 'transform 0.3s ease';
@@ -202,11 +212,15 @@ if (topMenuBtn && slidingMenu) {
             // Reset the rotation after the transition
             setTimeout(() => {
                 rightBtnImg.style.transform = '';
+                // Reset the flag after the animation is complete
+                isClickInProgress = false;
             }, 300);
         } else {
             slidingMenu.classList.add('active');
             rightBtnImg.src = minusImg; // Change to minus image when active
             rightBtnImg.style.transform = ''; // Remove any rotation
+            // Reset the flag immediately for the open state
+            isClickInProgress = false;
         }
         isMenuOpen = !isMenuOpen;
         console.log('Menu is now ' + (isMenuOpen ? 'open' : 'closed')); // Debug
@@ -216,8 +230,11 @@ if (topMenuBtn && slidingMenu) {
     document.addEventListener('click', function(e) {
         if (isMenuOpen && e.target !== topMenuBtn && !topMenuBtn.contains(e.target) && 
             e.target !== slidingMenu && !slidingMenu.contains(e.target)) {
+            // Set the flag to prevent mouseleave from changing the image
+            isClickInProgress = true;
+            
             slidingMenu.classList.remove('active');
-            rightBtnImg.src = originalImg; // Reset the image back to blue X
+            rightBtnImg.src = 'images/xr.svg'; // Change to red X image instead of blue X
             
             // Add a rotation animation when changing back to X
             rightBtnImg.style.transition = 'transform 0.3s ease';
@@ -226,6 +243,8 @@ if (topMenuBtn && slidingMenu) {
             // Reset the rotation after the transition
             setTimeout(() => {
                 rightBtnImg.style.transform = '';
+                // Reset the flag after the animation is complete
+                isClickInProgress = false;
             }, 300);
             
             isMenuOpen = false;
