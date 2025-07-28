@@ -412,8 +412,8 @@ body, * {
 }
 
 .right-bar .logo[src*="minus"] {
-    width: 34px;
-    height: 34px;
+    width: 42px;
+    height: 42px;
     transition: width 0.2s, height 0.2s;
 }
 
