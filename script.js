@@ -124,11 +124,15 @@ const rightLogo = rightBtn.querySelector('.logo');
 const originalRightSrc = rightLogo.src;
 
 rightBtn.addEventListener('mouseenter', () => {
-    rightLogo.src = 'images/xr.png'; // Make sure this path is correct
+    if (!isMenuOpen) { // Only change to red X if menu is closed
+        rightLogo.src = 'images/xr.png';
+    }
 });
 
 rightBtn.addEventListener('mouseleave', () => {
-    rightLogo.src = originalRightSrc;
+    if (!isMenuOpen) { // Only change back to original if menu is closed
+        rightLogo.src = originalRightSrc;
+    }
 });
 
 //page transition for about me (existing - slide up)
@@ -157,6 +161,9 @@ if (myworksLink && pageSlideIn) {
 /* Top right sliding menu */
 const topMenuBtn = document.getElementById('top-menu-btn');
 const slidingMenu = document.getElementById('sliding-menu');
+const rightBtnImg = document.querySelector('.right-bar .logo-btn .logo');
+const originalImg = 'images/xb.png';
+const minusImg = 'images/minus.png';
 let isMenuOpen = false;
 
 if (topMenuBtn && slidingMenu) {
@@ -169,8 +176,10 @@ if (topMenuBtn && slidingMenu) {
         
         if (isMenuOpen) {
             slidingMenu.classList.remove('active');
+            rightBtnImg.src = originalImg; // Change back to X image
         } else {
             slidingMenu.classList.add('active');
+            rightBtnImg.src = minusImg; // Change to minus image when active
         }
         isMenuOpen = !isMenuOpen;
         console.log('Menu is now ' + (isMenuOpen ? 'open' : 'closed')); // Debug
@@ -181,6 +190,7 @@ if (topMenuBtn && slidingMenu) {
         if (isMenuOpen && e.target !== topMenuBtn && !topMenuBtn.contains(e.target) && 
             e.target !== slidingMenu && !slidingMenu.contains(e.target)) {
             slidingMenu.classList.remove('active');
+            rightBtnImg.src = originalImg; // Also reset the image
             isMenuOpen = false;
         }
     });

@@ -130,7 +130,7 @@ a, a:visited {
 .sliding-menu {
     position: fixed; /* Fixed positioning to be over the page */
     right: -200px; /* Start off-screen */
-    top: 21px; /* Adjust top position to align better with the top bar */
+    top: 20px; /* Adjust top position to align better with the top bar */
     height: 32px; /* Reduced height for a more compact appearance */
     display: flex;
     align-items: center; /* Vertically center content */
@@ -380,7 +380,7 @@ body, * {
 
 
 .right-bar .logo-btn:hover .logo {
-    transform: rotate(90deg);
+    /* Removed rotation effect */
     background: #ffffff;
 }
 
@@ -408,6 +408,12 @@ body, * {
 .right-bar .logo[src*="xr"] {
     width: 43px;
     height: 43px;
+    transition: width 0.2s, height 0.2s;
+}
+
+.right-bar .logo[src*="minus"] {
+    width: 34px;
+    height: 34px;
     transition: width 0.2s, height 0.2s;
 }
 
