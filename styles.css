@@ -118,12 +118,64 @@ a, a:visited {
 
 .works .contact a {
     padding: 4px 12px; /* minimal padding */
-    margin: 0;
-    font-size: 16px;
-    font-family: inherit;
+}
+
+/* Sliding menu in top-right */
+.right-bar {
+    position: relative;
+    overflow: visible; /* Ensure the sliding menu can be visible outside */
+    z-index: 1002; /* Make sure the button stays above the sliding menu */
+}
+
+.sliding-menu {
+    position: fixed; /* Change to fixed positioning to be over the page */
+    right: -200px; /* Start off-screen */
+    top: 0; /* Align with the top of the page/top bar */
+    height: 64px; /* Match the height of the top bar */
+    display: flex;
+    align-items: center; /* Vertically center content */
+    background-color: #fff;
+    padding: 0 25px; /* Remove vertical padding, keep horizontal */
+    border-radius: 0; /* Remove border radius for a seamless look */
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999; /* Just below the top-bar z-index to appear as an extension */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow matching the top bar */
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* Subtle border for definition */
+}
+
+.sliding-menu.active {
+    opacity: 1;
+    visibility: visible;
+    right: 64px; /* Slide in to exactly meet the right-bar */
+}
+
+.slide-menu-item {
+    color: #6D7B8C;
+    text-align: right;
+    font-family: Coolvetica;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 64px; /* Match the height to center text vertically */
+    letter-spacing: -0.2px;
+    text-transform: lowercase;
     text-decoration: none;
-    display: inline-block;
-}/*works button*/
+    white-space: nowrap;
+    display: inline-block; /* Changed to inline-block for horizontal layout */
+    height: 100%; /* Take full height of the container */
+    padding: 0 10px; /* Add horizontal padding between items */
+    transition: color 0.2s ease;
+}
+
+.slide-menu-item:hover {
+    color: #333;
+}
 
 .contact {
     width: 165px;

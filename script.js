@@ -1,6 +1,6 @@
 const magicMouse = document.getElementById('magic-mouse');
 
-const clickableSelectors = 'a, .works, .contact, button:not(.logo-btn), .rotating-logo, .lbtn';
+const clickableSelectors = 'a, .works, .contact, button:not(.logo-btn), .rotating-logo, .lbtn, .slide-menu-item';
 
 document.addEventListener('mousemove', (e) => {
     magicMouse.style.left = e.clientX + 'px';
@@ -151,5 +151,37 @@ if (myworksLink && pageSlideIn) {
         setTimeout(() => {
             window.location.href = myworksLink.href;
         }, 600); // Match the CSS transition duration
+    });
+}
+
+/* Top right sliding menu */
+const topMenuBtn = document.getElementById('top-menu-btn');
+const slidingMenu = document.getElementById('sliding-menu');
+let isMenuOpen = false;
+
+if (topMenuBtn && slidingMenu) {
+    console.log('Top menu button and sliding menu found'); // Debug
+    
+    topMenuBtn.addEventListener('click', function(e) {
+        console.log('Top menu button clicked'); // Debug
+        e.preventDefault(); // Prevent any default action
+        e.stopPropagation(); // Prevent event bubbling
+        
+        if (isMenuOpen) {
+            slidingMenu.classList.remove('active');
+        } else {
+            slidingMenu.classList.add('active');
+        }
+        isMenuOpen = !isMenuOpen;
+        console.log('Menu is now ' + (isMenuOpen ? 'open' : 'closed')); // Debug
+    });
+    
+    // Close menu when clicking anywhere else on the page
+    document.addEventListener('click', function(e) {
+        if (isMenuOpen && e.target !== topMenuBtn && !topMenuBtn.contains(e.target) && 
+            e.target !== slidingMenu && !slidingMenu.contains(e.target)) {
+            slidingMenu.classList.remove('active');
+            isMenuOpen = false;
+        }
     });
 }
