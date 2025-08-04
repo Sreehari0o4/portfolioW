@@ -62,9 +62,6 @@
 }
 
 /* Hover handled in JS for better performance */
-.gallery-image:hover {
-    /* transform scale now handled by JS */
-}
 
 /* Single image in row takes full width */
 .gallery-row.single .gallery-image {
