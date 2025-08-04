@@ -10,6 +10,8 @@
     font-style: normal;
 }
 
+
+
 .page-title {
     color: #e9f934;
     text-align: left;
@@ -52,11 +54,16 @@
     height: 400px;
     object-fit: cover;
     border-radius: 8px;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; /* Reduces flickering */
+    transform: translateZ(0); /* Force GPU acceleration */
 }
 
+/* Hover handled in JS for better performance */
 .gallery-image:hover {
-    transform: scale(1.02);
+    /* transform scale now handled by JS */
 }
 
 /* Single image in row takes full width */
@@ -135,5 +142,44 @@
 .back-btn:hover .logo,
 .back-btn:focus .logo {
     transform: rotate(-90deg); /* Increase the scale as needed */
+}
+
+/* Magic Mouse Cursor */
+#magic-mouse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #e9f934; /* Match the yellow theme */
+    background: transparent;
+    pointer-events: none;
+    z-index: 9999;
+    will-change: transform;
+    opacity: 1 !important; /* Force visibility */
+    visibility: visible !important;
+    display: block !important;
+    
+    mix-blend-mode: difference; /* This inverts the color */
+    transition: background 0.15s, border-color 0.15s;
+    /* transform moved to JS for smoother performance */
+}
+
+#magic-mouse.magic-mouse--active {
+    background: currentColor;
+    border-color: white;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+#magic-mouse.covering {
+    transition: width 0.2s, height 0.2s, background 0.2s, border-color 0.2s, transform 0.1s;
+    border-radius: 12px; /* less round for button shape, adjust as needed */
+    background: rgba(0,0,0,0.07); /* subtle overlay effect */
+    border-color: #222;
+}
+
+body, * {
+    cursor: none !important;
 }
 
