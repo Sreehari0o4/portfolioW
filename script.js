@@ -251,3 +251,13 @@ if (topMenuBtn && slidingMenu) {
         }
     });
 }
+
+function transitionToClicks(event) {
+    event.preventDefault();
+    const transition = document.getElementById('page-vertical-transition');
+    transition.classList.add('active');
+    
+    setTimeout(() => {
+        window.location.href = 'pages/click.html';
+    }, 600);
+}
