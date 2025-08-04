@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Coolvetica';
+    src: url('../fonts/coolvetica rg.ttf') format('truetype');
+}
+
+.page-title {
+    color: #EFEFEF;
+    text-align: center;
+    font-family: Coolvetica;
+    font-size: 185px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -5.55px;
+    text-transform: lowercase;
+    margin: 0;
+    padding: 0px 0;
+}
