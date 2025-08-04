@@ -459,3 +459,39 @@ body, * {
     pointer-events: auto;
 }
 
+.about-me-floating {
+    position: absolute;
+    top: 64px;
+    left: 26px;
+    width: 58px;
+    height: auto;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+
+.logo-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: auto;
+}
+
+.about-me-icon {
+    width: 24px;
+    height: auto;
+    margin-top: 8px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.about-me-icon:hover {
+    opacity: 1;
+}
