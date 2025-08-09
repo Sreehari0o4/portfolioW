@@ -435,10 +435,15 @@ body, * {
   /* CORNERS */
   border-radius: 22px;      /* tweak if you want sharper (was 24px) */
 
-  background: #181818;
-  border: 1px solid #2a2a2a;
-  border-radius: 24px;
-  padding: 40px 44px 48px ;
+  /* glass effect */
+  background: linear-gradient(135deg, rgba(24,24,24,0.55) 0%, rgba(28,28,28,0.35) 60%, rgba(40,40,40,0.25) 100%);
+  backdrop-filter: blur(18px) saturate(140%) contrast(105%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%) contrast(105%);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+     0 12px 40px -10px rgba(0,0,0,0.55),
+     0 0 0 1px rgba(255,255,255,0.03) inset;
+
   color: #e6e6e6;
   font-family: Montserrat, Arial, sans-serif;
   box-shadow: 0 24px 60px -8px rgba(0,0,0,.55);
@@ -454,6 +459,20 @@ body, * {
 .about-modal--open .about-modal__dialog {
   transform: translateY(0) scale(1);
   opacity: 1;
+}
+
+/* optional subtle glass highlight */
+.about-modal__dialog::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(255,255,255,0.18), transparent 55%),
+    radial-gradient(circle at 85% 85%, rgba(255,255,255,0.05), transparent 65%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: .9;
 }
 
 /* Scrollable content area */
@@ -506,7 +525,7 @@ body, * {
   font-weight: 400;
   letter-spacing: -2px;
   text-transform: lowercase;
-  color: #e9f934;
+  color: #ff6060;
 }
 
 .about-modal__text {
