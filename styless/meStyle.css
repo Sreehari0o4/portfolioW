@@ -494,6 +494,19 @@ body, * {
   margin: 4px 0;
 }
 
+.about-modal__section {
+  margin: 26px 0 10px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -.5px;
+  text-transform: lowercase;
+  color: #f0f0f0;
+}
+
+.about-modal__section:first-of-type { margin-top: 8px; }
+
+.about-modal__list strong { color:#e9f934; font-weight:500; }
+
 body.modal-open {
   overflow: hidden;
 }
