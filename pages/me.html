@@ -1,45 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aboutme</title>
-    <link rel="stylesheet" href="../styless/meStyle.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aboutme</title>
+  <link rel="stylesheet" href="../styless/meStyle.css">
 </head>
 <body>
-    <div class="top-bar" background-color="#FFF">
-        <div class="back-bar">
-            <button class="back-btn" onclick="window.location.href='../index.html'">
-                <img src="../images/backr.svg" alt="back" class="logo lbtn">
-            </button>
-        </div>
+  <div class="top-bar" background-color="#FFF">
+    <div class="back-bar">
+      <button class="back-btn" onclick="window.location.href='../index.html'">
+        <img src="../images/backr.svg" alt="back" class="logo lbtn">
+      </button>
     </div>
-    <div class="me-bg-img"></div>
-    <div class="about-content">
+  </div>
+
+  <div class="me-bg-img"></div>
+
+  <div class="about-content">
     <div class="about-me-title">about me</div>
     <div class="about-me-flex-row">
-        <div class="about-me-content">
-            <p>Hey, I’m <span class="about-me-name">Sreehari S Kumar</span></p>
-            <p>
-                I specialize in <span class="about-me-keyword">front-end web development</span> and <span class="about-me-keyword">UI/UX design</span>, creating digital experiences that are clean, functional, and human-centered. I enjoy turning ideas into reality through thoughtful design and clean code.
-            </p>
-            <p>
-                My curiosity doesn’t stop at the front end. I'm also passionate about <span class="about-me-keyword">DevOps</span> — learning how to automate, deploy, and scale modern web applications. The blend of creativity and systems thinking drives my work every day.
-            </p>
-                <a href="../resources/SreehariSKumar.pdf" download class="resume-btn">resume</a>
-                <div class="linkz">
-                <a href="mailto:your@email.com" class="linkz-btn mail-link">github</a>
-                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="linkz-btn linkedin-link">linkdin</a>
-                <a href="contact.html" class="linkz-btn contact-link">contact</a>
-            </div>
+      <div class="about-me-content">
+        <p>Hey, I’m <span class="about-me-name">Sreehari S Kumar</span></p>
+        <p>
+          I specialize in <span class="about-me-keyword">front-end web development</span> and
+          <span class="about-me-keyword">UI/UX design</span>, creating digital experiences that are clean, functional, and human-centered.
+        </p>
+        <p>
+          I'm also exploring <span class="about-me-keyword">DevOps</span>—automation, deployment, scalability.
+        </p>
+        <a href="../resources/SreehariSKumar.pdf" download class="resume-btn">resume</a>
+        <div class="linkz">
+          <a href="https://github.com/" target="_blank" class="linkz-btn mail-link">github</a>
+          <a href="https://www.linkedin.com/" target="_blank" class="linkz-btn linkedin-link">linkdin</a>
+          <a href="contact.html" class="linkz-btn contact-link">contact</a>
         </div>
-        <div class="about-me-image-col">
-            <div class="about-me-image-box"></div>
-            <div class="about-me-more-text">know more about me <a href="YOUR_LINK_HERE" class="about-me-link">here</a></div>
+      </div>
+      <div class="about-me-image-col">
+        <div class="about-me-image-box"></div>
+        <div class="about-me-more-text">
+          know more about me <a href="#" id="more-about-link" class="about-me-link">here</a>
         </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="about-modal" class="about-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="about-modal__backdrop" data-close></div>
+    <div class="about-modal__dialog" role="document">
+      <button class="about-modal__close" type="button" aria-label="Close" data-close>&times;</button>
+      <h2 class="about-modal__title">more about me</h2>
+      <p class="about-modal__text">
+        I enjoy blending design and engineering; love motion, accessibility & performance. Outside the screen: sketching, quick photo walks, small web experiments.
+      </p>
+      <ul class="about-modal__list">
+        <li>learning: frontend performance tuning</li>
+        <li>stack: html / css / js (minimal extras)</li>
+        <li>principles: clarity · intent · reduction</li>
+      </ul>
     </div>
-    <div id="magic-mouse"></div>
-    <script src="../scripts/meScript.js"></script>
+  </div>
+
+  <div id="magic-mouse"></div>
+  <script src="../scripts/meScript.js" defer></script>
 </body>
 </html>
