@@ -330,9 +330,9 @@ p{
 .about-me-link {
   color: #ff7b7b;
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
   line-height: normal;
   letter-spacing: 1.05px;
   text-decoration: none; /* Optional: removes underline */
@@ -444,7 +444,7 @@ body, * {
      0 12px 40px -10px rgba(0,0,0,0.55),
      0 0 0 1px rgba(255,255,255,0.03) inset;
 
-  color: #e6e6e6;
+  color: #ffffff;
   font-family: Montserrat, Arial, sans-serif;
   box-shadow: 0 24px 60px -8px rgba(0,0,0,.55);
 
@@ -524,7 +524,7 @@ body, * {
   font-size: 48px;
   font-weight: 400;
   letter-spacing: -2px;
-  text-transform: lowercase;
+  text-transform: lowercase; 
   color: #ff6060;
 }
 
@@ -552,13 +552,13 @@ body, * {
   font-size: 18px;
   font-weight: 500;
   letter-spacing: -.5px;
-  text-transform: lowercase;
+  text-transform: none; /* was: lowercase */
   color: #f0f0f0;
 }
 
 .about-modal__section:first-of-type { margin-top: 8px; }
 
-.about-modal__list strong { color:#e9f934; font-weight:500; }
+.about-modal__list strong { color:#ff6060; font-weight:500; }
 
 body.modal-open {
   overflow: hidden;
@@ -566,7 +566,7 @@ body.modal-open {
 
 .about-modal__dialog :focus-visible,
 .about-modal__close:focus-visible {
-  outline: 2px solid #e9f934;
+  outline: 2px solid #ff6060;
   outline-offset: 3px;
   border-radius: 6px;
 }
